@@ -67,7 +67,7 @@ class PeopleInfoSerializer(serializers.Serializer):
     # book=BookInfoSerializer(instance=book).data
     # 等号右边的 book 是模型对象
     # 等号左边的book 是字典数据
-    book=BookInfoSerializer()
+    # book=BookInfoSerializer()
     """
     {
     'id': 1, 'name': '郭靖', 'password': '123456abc', 'description': '降龙十八掌', 'is_delete': False, 
@@ -75,3 +75,17 @@ class PeopleInfoSerializer(serializers.Serializer):
     }
 
     """
+
+
+"""
+
+①book:1                             PrimaryKeyRelationField                                                       
+
+②book_id:1                          IntergerField
+
+③book:射雕英雄传                      StringRelationField
+
+④book: {id:1,name:射雕英雄传,readcount:10}   BookInfoSerializer
+
+
+"""
