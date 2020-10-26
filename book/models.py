@@ -19,6 +19,7 @@ class BookInfo(models.Model):
 
     def __str__(self):
         """定义每个数据对象的显示信息"""
+        # return 'lalalalal'
         return self.name
 
 # 准备人物列表信息的模型类

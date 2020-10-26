@@ -55,4 +55,7 @@ class PeopleInfoSerializer(serializers.Serializer):
     # book=serializers.PrimaryKeyRelatedField(queryset=BookInfo.objects.all())
     # 或者
     # read_only=True 意思就是 我不验证数据了
-    book=serializers.PrimaryKeyRelatedField(read_only=True)
+    # book=serializers.PrimaryKeyRelatedField(read_only=True)
+
+    # ③ 如果我们期望获取外键关联的 字符串的信息, 这个时候 我们可以使用 StringRelationField
+    book=serializers.StringRelatedField()
