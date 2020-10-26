@@ -58,4 +58,20 @@ class PeopleInfoSerializer(serializers.Serializer):
     # book=serializers.PrimaryKeyRelatedField(read_only=True)
 
     # ③ 如果我们期望获取外键关联的 字符串的信息, 这个时候 我们可以使用 StringRelationField
-    book=serializers.StringRelatedField()
+    # book=serializers.StringRelatedField()
+
+    # ④ 如果我们期望获取, book 所关联的模型的 所有数据,这个时候我们就定义 book=BookInfoSerializer()
+    # book=关联的BookInfo的一个关联对象数据
+    # book=BookInfo.objects.get(id=xxx)
+
+    # book=BookInfoSerializer(instance=book).data
+    # 等号右边的 book 是模型对象
+    # 等号左边的book 是字典数据
+    book=BookInfoSerializer()
+    """
+    {
+    'id': 1, 'name': '郭靖', 'password': '123456abc', 'description': '降龙十八掌', 'is_delete': False, 
+    'book': OrderedDict([('id', 1), ('name','射雕英雄传'), ('pub_date', '1980-05-01'), ('readcount', 12)])
+    }
+
+    """
