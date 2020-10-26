@@ -204,5 +204,15 @@ class BookDetailView(View):
 1. 将对象转换为字典数据
 
 """
+from book.serializers import BookInfoSerializer
+from book.models import BookInfo
 
+# 1. 模拟查询一个对象
+book=BookInfo.objects.get(id=1)
 
+# BookInfoSerializer(instance=对象,data=字典)
+# 2.实例化序列化,将对象数据传递给序列化器
+serializer=BookInfoSerializer(instance=book)
+
+# 3.获取序列化器将对象转换为字典的数据
+serializer.data

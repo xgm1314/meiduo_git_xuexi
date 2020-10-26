@@ -31,5 +31,5 @@ class BookInfoSerializer(serializers.Serializer):
 
     id =serializers.IntegerField()
     name =serializers.CharField()
-    pub_data =serializers.DateField()
-    reacount =serializers.IntegerField()
+    pub_date =serializers.DateField()
+    readcount =serializers.IntegerField()
