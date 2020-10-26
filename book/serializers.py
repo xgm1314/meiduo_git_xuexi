@@ -33,3 +33,18 @@ class BookInfoSerializer(serializers.Serializer):
     name =serializers.CharField()
     pub_date =serializers.DateField()
     readcount =serializers.IntegerField()
+
+
+################定义人物模型对应的序列化器#####################
+class PeopleInfoSerializer(serializers.Serializer):
+
+    id=serializers.IntegerField()
+    name=serializers.CharField()
+    password=serializers.CharField()
+    description=serializers.CharField()
+    is_delete=serializers.BooleanField()
+
+    ###对外键进行学习
+    # ①  如果我们定义的序列化器外键字段类型为 IntegerField
+    # 那么,我们定义的序列化器字段名 必须和数据库中的外键字段名一致
+    book_id=serializers.IntegerField()

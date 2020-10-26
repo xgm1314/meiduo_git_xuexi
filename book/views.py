@@ -240,3 +240,28 @@ OrderedDict([('id', 4), ('name', '雪山飞狐'), ('pub_date', '1987-11-11'), ('
 ]
 
 """
+
+
+#########################外键的序列化器的定义 验证###########################################################################
+
+from book.serializers import PeopleInfoSerializer
+from book.models import PeopleInfo
+
+# 1.  模拟查询对象
+person=PeopleInfo.objects.get(id=1)
+
+# 2. 创建序列化器
+serializer=PeopleInfoSerializer(instance=person)
+
+# 3. 获取序列化器中 将对象转换为字典的数据
+serializer.data
+
+
+
+
+
+
+
+
+
+
