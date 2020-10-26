@@ -36,6 +36,7 @@ class BookInfoSerializer(serializers.Serializer):
 
 
 ################定义人物模型对应的序列化器#####################
+from book.models import BookInfo
 class PeopleInfoSerializer(serializers.Serializer):
 
     id=serializers.IntegerField()
@@ -47,4 +48,11 @@ class PeopleInfoSerializer(serializers.Serializer):
     ###对外键进行学习
     # ①  如果我们定义的序列化器外键字段类型为 IntegerField
     # 那么,我们定义的序列化器字段名 必须和数据库中的外键字段名一致
-    book_id=serializers.IntegerField()
+    # book_id=serializers.IntegerField()
+
+    # ② 如果我们期望的外键数据的key就是模型字段的名字,那么 PrimaryKeyRelatedField 就可以获取到关联的模型id值
+    # queryset 在验证数据的时候,我们要告诉系统,在哪里匹配外键数据
+    # book=serializers.PrimaryKeyRelatedField(queryset=BookInfo.objects.all())
+    # 或者
+    # read_only=True 意思就是 我不验证数据了
+    book=serializers.PrimaryKeyRelatedField(read_only=True)
