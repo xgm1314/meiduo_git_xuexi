@@ -198,3 +198,11 @@ class BookDetailView(View):
         book.delete()
 
         return JsonResponse({},status=204)
+
+"""
+我们的序列化器 目的
+1. 将对象转换为字典数据
+
+"""
+
+
