@@ -8,6 +8,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
+
+python中操作git：
+ctrl + k 来进行git的git add . 和commit 的操作
+ctrl +shift + k 来进行git push 操作
 """
 
 from pathlib import Path
