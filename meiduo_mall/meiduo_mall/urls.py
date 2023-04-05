@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+"""
 from django.http import HttpResponse
 
 
@@ -27,9 +27,9 @@ def log(request):
     logger.error('错误信息')
     logger.debug('调试')
     return HttpResponse('log')
-
+"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('log/', log)
+    # path('log/', log)
 ]
