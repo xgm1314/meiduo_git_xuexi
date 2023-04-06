@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
+    # 'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
 ]
 
 MIDDLEWARE = [
@@ -119,7 +119,7 @@ TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_TZ = False
+USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
