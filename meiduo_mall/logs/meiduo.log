@@ -1,0 +1,168 @@
+INFO 2023-04-05 13:40:59,400 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-05 13:41:00,923 log 241 Not Found: /
+WARNING 2023-04-05 13:41:00,923 basehttp 187 "GET / HTTP/1.1" 404 2168
+INFO 2023-04-05 13:41:13,965 urls 25 信息记录
+WARNING 2023-04-05 13:41:13,965 urls 26 警告信息
+ERROR 2023-04-05 13:41:13,980 urls 27 错误信息
+INFO 2023-04-05 13:41:13,980 basehttp 187 "GET /log/ HTTP/1.1" 200 3
+INFO 2023-04-05 13:48:26,753 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 13:48:27,434 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 13:48:40,771 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 13:50:41,584 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 13:50:42,241 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-04-05 13:51:21,141 exception 125 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\http\request.py", line 152, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2023-04-05 13:51:21,209 log 241 Bad Request: /
+WARNING 2023-04-05 13:51:21,209 basehttp 187 "GET / HTTP/1.1" 400 71760
+INFO 2023-04-05 13:51:49,683 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 13:51:50,284 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-05 13:51:50,531 log 241 Not Found: /
+WARNING 2023-04-05 13:51:50,531 basehttp 187 "GET / HTTP/1.1" 404 2168
+WARNING 2023-04-05 13:52:26,357 log 241 Not Found: /
+WARNING 2023-04-05 13:52:26,357 basehttp 187 "GET / HTTP/1.1" 404 2168
+INFO 2023-04-05 13:52:48,164 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 13:52:48,797 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:00:38,165 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 14:00:38,796 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:04:42,836 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 14:04:43,416 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:06:27,126 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:08:44,434 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:09:46,522 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 14:09:47,077 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:10:20,664 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:10:45,405 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:10:56,837 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:12:09,515 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-05 14:12:10,186 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:15:53,012 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:16:13,638 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:16:19,990 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-05 14:16:23,207 log 241 Not Found: /
+WARNING 2023-04-05 14:16:23,207 basehttp 187 "GET / HTTP/1.1" 404 2168
+ERROR 2023-04-05 14:16:30,341 log 241 Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'meiduo_mall.auth_user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\admin\sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\decorators.py", line 134, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\admin\sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\admin\sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\functional.py", line 266, in inner
+    self._setup()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\__init__.py", line 198, in get_user
+    user = backend.get_user(user_id)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\backends.py", line 162, in get_user
+    user = UserModel._default_manager.get(pk=user_id)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 646, in get
+    num = len(clone)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 376, in __len__
+    self._fetch_all()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\sql\compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\ml\python\py_ceshi\lib\site-packages\MySQLdb\connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'meiduo_mall.auth_user' doesn't exist")
+ERROR 2023-04-05 14:16:30,356 basehttp 187 "GET /admin/ HTTP/1.1" 500 202208
+WARNING 2023-04-05 14:16:35,359 log 241 Not Found: /
+WARNING 2023-04-05 14:16:35,359 basehttp 187 "GET / HTTP/1.1" 404 2168
+INFO 2023-04-05 14:16:57,991 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\urls.py changed, reloading.
+INFO 2023-04-05 14:16:58,655 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-05 14:17:00,164 basehttp 187 "GET / HTTP/1.1" 200 10617
+INFO 2023-04-06 12:23:27,750 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:24:41,988 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\apps\users\models.py changed, reloading.
+INFO 2023-04-06 12:24:42,518 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:25:08,963 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:25:39,580 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:26:41,158 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\apps\users\models.py changed, reloading.
+INFO 2023-04-06 12:26:41,684 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:31:22,971 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:38:31,923 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:39:11,142 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:39:28,643 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:40:40,117 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:40:56,804 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:41:06,565 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:41:21,856 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:42:40,939 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:42:51,811 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:42:59,477 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:43:12,275 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:43:39,234 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:44:01,058 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:44:32,169 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:46:36,490 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 12:46:54,399 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:27:07,685 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:30:03,315 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:31:29,491 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 17:31:30,084 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:34:36,973 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:36:44,769 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\users\models.py changed, reloading.
+INFO 2023-04-06 17:36:45,398 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:38:12,900 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:38:48,167 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 17:38:57,888 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 17:38:58,405 autoreload 677 Watching for file changes with StatReloader
