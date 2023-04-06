@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
+    'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
 ]
 
 MIDDLEWARE = [
