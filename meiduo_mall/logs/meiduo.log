@@ -166,3 +166,9 @@ INFO 2023-04-06 17:38:12,900 autoreload 677 Watching for file changes with StatR
 INFO 2023-04-06 17:38:48,167 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 17:38:57,888 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
 INFO 2023-04-06 17:38:58,405 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 18:01:33,111 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 18:02:01,571 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\apps.py changed, reloading.
+INFO 2023-04-06 18:02:02,098 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 18:02:07,360 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 18:02:53,800 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 21:08:50,312 autoreload 677 Watching for file changes with StatReloader
