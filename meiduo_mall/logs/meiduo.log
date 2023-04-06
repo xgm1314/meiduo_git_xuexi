@@ -188,3 +188,40 @@ INFO 2023-04-06 22:17:11,573 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\
 INFO 2023-04-06 22:17:12,308 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 22:17:58,867 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 22:18:08,746 basehttp 187 "GET /username/hz/count/ HTTP/1.1" 200 67
+INFO 2023-04-06 22:33:49,239 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\urls.py changed, reloading.
+INFO 2023-04-06 22:33:49,967 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:34:14,665 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-06 22:34:19,536 log 241 Not Found: /username/hz/count/
+WARNING 2023-04-06 22:34:19,536 basehttp 187 "GET /username/hz/count/ HTTP/1.1" 404 2324
+INFO 2023-04-06 22:35:31,967 basehttp 187 "GET /username/ffffffffhz/count/ HTTP/1.1" 200 67
+INFO 2023-04-06 22:35:58,034 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:35:58,655 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:37:35,126 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:37:35,750 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:37:41,238 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:37:41,860 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:37:53,760 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:37:54,381 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:00,977 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:01,583 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:11,282 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:11,910 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:19,819 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:20,450 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:33,701 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:34,335 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:38,746 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:39,366 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:38:55,710 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:38:56,379 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:39:07,482 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\urls.py changed, reloading.
+INFO 2023-04-06 22:39:08,115 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:39:34,962 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:39:35,656 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:39:47,924 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:40:02,328 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:40:04,856 basehttp 187 "GET /username/hz/count/ HTTP/1.1" 200 63
+INFO 2023-04-06 22:40:25,152 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\urls.py changed, reloading.
+INFO 2023-04-06 22:40:25,873 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:40:54,974 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-04-06 22:40:55,636 autoreload 677 Watching for file changes with StatReloader
