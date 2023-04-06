@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-vy0y*^a&z)vsjgl7fi2v4#y$ly^j&k)x0k+_fv3!fb=^29v562
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.105']
+# ALLOWED_HOSTS = ['192.168.0.105']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -276,3 +277,5 @@ LOGGING = {
     },
 }
 '''
+# 替换django自带的User模型
+AUTH_USER_MODEL = 'users.User'
