@@ -175,3 +175,16 @@ INFO 2023-04-06 21:08:50,312 autoreload 677 Watching for file changes with StatR
 INFO 2023-04-06 21:26:02,006 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 21:27:11,272 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 21:28:05,370 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 21:54:15,684 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 21:54:16,374 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:05:15,193 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\urls.py changed, reloading.
+INFO 2023-04-06 22:05:15,850 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:06:05,763 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\urls.py changed, reloading.
+INFO 2023-04-06 22:06:06,416 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:14:57,282 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-06 22:15:04,782 log 241 Not Found: /username/hz/count/
+WARNING 2023-04-06 22:15:04,782 basehttp 187 "GET /username/hz/count/ HTTP/1.1" 404 2237
+INFO 2023-04-06 22:17:11,573 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\urls.py changed, reloading.
+INFO 2023-04-06 22:17:12,308 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:17:58,867 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:18:08,746 basehttp 187 "GET /username/hz/count/ HTTP/1.1" 200 67
