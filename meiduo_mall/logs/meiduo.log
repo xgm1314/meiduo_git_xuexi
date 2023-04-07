@@ -225,3 +225,57 @@ INFO 2023-04-06 22:40:25,152 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\
 INFO 2023-04-06 22:40:25,873 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-04-06 22:40:54,974 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
 INFO 2023-04-06 22:40:55,636 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:42:55,385 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:43:29,743 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 22:43:30,330 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:43:30,499 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 22:43:31,121 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:43:40,321 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:44:16,196 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 22:44:16,874 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-06 22:44:16,923 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-06 22:44:17,547 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-07 11:40:31,954 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-07 11:41:31,104 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-07 11:41:31,591 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-07 12:07:11,175 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-07 12:08:04,471 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\meiduo_mall\settings.py changed, reloading.
+INFO 2023-04-07 12:08:05,059 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-04-07 12:08:11,414 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-04-07 12:09:31,955 exception 125 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\http\request.py", line 152, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2023-04-07 12:09:32,056 log 241 Bad Request: /
+WARNING 2023-04-07 12:09:32,057 basehttp 187 "GET / HTTP/1.1" 400 72410
+ERROR 2023-04-07 12:09:32,187 exception 125 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\http\request.py", line 152, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2023-04-07 12:09:32,210 log 241 Bad Request: /favicon.ico
+WARNING 2023-04-07 12:09:32,210 basehttp 187 "GET /favicon.ico HTTP/1.1" 400 72335
+INFO 2023-04-07 12:09:59,744 autoreload 677 Watching for file changes with StatReloader
+WARNING 2023-04-07 12:10:04,248 log 241 Not Found: /
+WARNING 2023-04-07 12:10:04,248 basehttp 187 "GET / HTTP/1.1" 404 2252
+WARNING 2023-04-07 12:10:04,283 log 241 Not Found: /favicon.ico
+WARNING 2023-04-07 12:10:04,283 basehttp 187 "GET /favicon.ico HTTP/1.1" 404 2303
+WARNING 2023-04-07 12:10:49,053 log 241 Not Found: /
+WARNING 2023-04-07 12:10:49,054 basehttp 187 "GET / HTTP/1.1" 404 2252
+WARNING 2023-04-07 12:28:34,744 log 241 Not Found: /usernames/hzhhhhh/count
+WARNING 2023-04-07 12:28:34,745 basehttp 187 "GET /usernames/hzhhhhh/count HTTP/1.1" 404 2339
+INFO 2023-04-07 12:29:32,305 basehttp 187 "GET /username/hzhhhhh/count HTTP/1.1" 301 0
+INFO 2023-04-07 12:29:32,310 basehttp 187 "GET /username/hzhhhhh/count/ HTTP/1.1" 200 39

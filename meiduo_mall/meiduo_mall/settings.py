@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-vy0y*^a&z)vsjgl7fi2v4#y$ly^j&k)x0k+_fv3!fb=^29v562
 DEBUG = True
 
 # ALLOWED_HOSTS = ['192.168.0.105']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
+    'corsheaders'  # CORS跨域设置
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # CORS的配置放在最上面
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -279,3 +281,9 @@ LOGGING = {
 '''
 # 替换django自带的User模型
 AUTH_USER_MODEL = 'users.User'
+# CORS 白名单
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8000',
+    'http://192.168.0.105:8000'
+)
+CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
