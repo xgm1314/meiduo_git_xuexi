@@ -7,7 +7,16 @@ from django.urls import converters
 
 
 class UsernameConverter:
+    ''' 用户名验证 '''
     regex = '[a-zA-Z0-9_-]{5,20}'
+
+    def to_python(self, value):
+        return value
+
+
+class UserMobileConverter:
+    ''' 手机号验证 '''
+    regex = '1[345789]\d{9}'
 
     def to_python(self, value):
         return value

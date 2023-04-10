@@ -31,10 +31,11 @@ def log(request):
 """
 
 # 注册转换器
-from utils.converters import UsernameConverter
+from utils.converters import UsernameConverter,UserMobileConverter
 from django.urls import register_converter
 
 register_converter(UsernameConverter, 'username')
+register_converter(UserMobileConverter, 'mobile')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
