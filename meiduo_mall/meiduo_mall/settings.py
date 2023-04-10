@@ -122,7 +122,7 @@ TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -284,6 +284,7 @@ AUTH_USER_MODEL = 'users.User'
 # CORS 白名单
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8000',
-    'http://192.168.0.105:8000'
+    'http://192.168.0.105:8000',
+    'http://127.0.0.1:8080'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie

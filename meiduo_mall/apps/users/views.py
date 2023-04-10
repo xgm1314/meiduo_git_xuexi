@@ -16,7 +16,7 @@ class UsernameCountView(View):
         #     return JsonResponse({'code': 200, 'errmsg': '用户名已存在'})
         count = User.objects.filter(username=username).count()
         if count > 0:
-            return JsonResponse({'code': 0, 'count': count, 'errmsg': '用户已存在'})
+            return JsonResponse({'code': 400, 'count': count, 'errmsg': '用户已存在'})
         return JsonResponse({'code': 0, 'count': count, 'errmsg': 'ok'})
 
 
@@ -27,7 +27,7 @@ class UserMobileCountView(View):
         count = User.objects.filter(mobile=mobile).count()
         # print(count)
         if count > 0:
-            return JsonResponse({'code': 0, 'count': count, 'errmsg': '手机号已存在'})
+            return JsonResponse({'code': 400, 'count': count, 'errmsg': '手机号已存在'})
         return JsonResponse({'code': 0, 'count': count, 'errmsg': 'ok'})
 
 
@@ -62,7 +62,6 @@ class RegisterView(View):
         count_username = User.objects.filter(username=username).count()
         if count_username > 0:
             return JsonResponse({'code': 400, 'errmsg': '用户已存在'})
-
         #     3.3 密码满足规则
         #     3.4 确认密码和密码要一致
         if password != password2:
@@ -83,5 +82,39 @@ class RegisterView(View):
         # # 添加用户方式二(密码未加密):
         # User.objects.create(username=username, password=password, mobile=mobile)
         # 添加加密密码用户
-        User.objects.create_user(username=username, password=password, mobile=mobile)
+        user = User.objects.create_user(username=username, password=password, mobile=mobile)
+        # 添加session数据(django提供的状态保持方法)
+        from django.contrib.auth import login
+        login(request, user)
         return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
