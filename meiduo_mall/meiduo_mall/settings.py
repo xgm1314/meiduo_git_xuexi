@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.users.apps.UsersConfig',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
-    'corsheaders'  # CORS跨域设置
+    'apps.users',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
+    'corsheaders',  # CORS跨域设置
+    'apps.verifications',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,13 @@ CACHES = {
     "session": {  # session信息保存到redis数据库的1号库
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+    "code": {  # 图片验证码信息保存到redis数据库的2号库
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
