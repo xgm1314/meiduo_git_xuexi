@@ -4,7 +4,7 @@
 # @File : urls
 # @Project : meiduo_mall
 from django.urls import path
-from apps.users.views import UsernameCountView, UserMobileCountView, RegisterView, LoginView, LogoutView
+from apps.users.views import UsernameCountView, UserMobileCountView, RegisterView, LoginView, LogoutView, CenterView
 
 urlpatterns = [
     path('username/<username:username>/count/', UsernameCountView.as_view()),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('register/', RegisterView.as_view()),
     path('login/', LoginView.as_view()),
     path('logout/', LogoutView.as_view()),
+    path('center/', CenterView.as_view()),
 ]
