@@ -106,9 +106,9 @@ class LoginView(View):
         # 验证是以账号登录还是手机号登录
         # 可以根据修改User.USERNAME_FIELD字段来影响authenticate的查询
         if re.match(r'1[345789]\d{9}', username):
-            User.USERNAME_FIELD='mobile'
+            User.USERNAME_FIELD = 'mobile'
         else:
-            User.USERNAME_FIELD='username'
+            User.USERNAME_FIELD = 'username'
 
         # 验证账号或者密码是否正确
         from django.contrib.auth import authenticate
@@ -123,4 +123,8 @@ class LoginView(View):
             request.session.set_expiry(60 * 60 * 24 * 7)  # 7天免登录
         else:
             request.session.set_expiry(0)  # 关闭会话session清空
-        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+        # 利用cookie登录信息
+        response = JsonResponse({'code': 0, 'errmsg': 'ok'})
+        response.set_cookie('username', username)
+        return response
