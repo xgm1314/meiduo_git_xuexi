@@ -102,6 +102,14 @@ class LoginView(View):
         # 验证数据
         if not all([username, password]):
             return JsonResponse({'code': 400, 'errmsg': '请填写用户名或密码'})
+
+        # 验证是以账号登录还是手机号登录
+        # 可以根据修改User.USERNAME_FIELD字段来影响authenticate的查询
+        if re.match(r'1[345789]\d{9}', username):
+            User.USERNAME_FIELD='mobile'
+        else:
+            User.USERNAME_FIELD='username'
+
         # 验证账号或者密码是否正确
         from django.contrib.auth import authenticate
         user = authenticate(username=username, password=password)
