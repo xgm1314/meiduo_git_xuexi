@@ -41,10 +41,21 @@ class SmsCodeView(View):
             return JsonResponse({'code': 400, 'errmsg': '操作过于频繁,请勿频繁操作'})
         from random import randint
         sms_code = '%04d' % randint(0, 9999)  # 生成4位随机验证码
-        redis_cli.setex(mobile, 120, sms_code)  # 保存验证码
-        redis_cli.setex('send_flag_%s' % mobile, 60, 1)  # 发送短信后,标记发送短信的标记
-        from libs.yuntongxun.sms import CCP
-        CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
+
+        pipeline = redis_cli.pipeline  # 创建pipeline管道
+        pipeline.setex(mobile, 120, sms_code)  # 将redis请求加到队列
+        pipeline.setex('send_flag_%s' % mobile, 60, 1)
+        pipeline.execute()  # 执行请求
+
+        # redis_cli.setex(mobile, 120, sms_code)  # 保存验证码
+        # redis_cli.setex('send_flag_%s' % mobile, 60, 1)  # 发送短信后,标记发送短信的标记
+
+        from celery_tasks.sms.tasks import celery_send_code  # celery异步发送短信验证码
+        celery_send_code.delay(mobile, sms_code)  # 调用delay()方法
+
+        # from libs.yuntongxun.sms import CCP
+        # CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
+
         return JsonResponse({'code': 0, 'errmsg': '验证码发送成功'})  # 返回响应
 
     def get_receive(self, request, mobile):
