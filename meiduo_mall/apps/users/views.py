@@ -128,3 +128,14 @@ class LoginView(View):
         response = JsonResponse({'code': 0, 'errmsg': 'ok'})
         response.set_cookie('username', username)
         return response
+
+
+class LogoutView(View):
+    """ 退出登录 """
+
+    def delete(self, request):
+        from django.contrib.auth import logout
+        logout(request)  # 退出登录，清除session信息
+        response = JsonResponse({'code': 0, 'errmsg': 'ok'})
+        response.delete_cookie('username')  # 清楚cookie信息
+        return response
