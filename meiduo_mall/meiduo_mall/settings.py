@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.users',  # 将创建的app放在同一个文件夹下，需要更改apps.py的name属性
-    'corsheaders',  # CORS跨域设置
     'apps.verifications',
+    'apps.oauth',
+
+    'corsheaders',  # CORS跨域设置
 ]
 
 MIDDLEWARE = [
