@@ -32,7 +32,7 @@ class SmsCodeView(View):
         # 验证图片验证码
         from django_redis import get_redis_connection
         redis_cli = get_redis_connection('code')  # 连接redis库
-        redis_image_code = redis_cli.get('uuid')  # 获取redis库的值
+        redis_image_code = redis_cli.get(uuid)  # 获取redis库的值
         if redis_image_code is None:  # 如果不存在
             return JsonResponse({'code': 400, 'errmsg': '图片验证码已过期'})
         if redis_image_code.decode().lower() != image_code.lower():  # 全部转换成小写进行对比
@@ -52,12 +52,12 @@ class SmsCodeView(View):
         # redis_cli.setex(mobile, 60, sms_code)  # 保存验证码
         # redis_cli.setex('send_flag_%s' % mobile, 60, 1)  # 发送短信后,标记发送短信的标记
 
-        from celery_tasks.sms.tasks import celery_send_code  # celery异步发送短信验证码
-        celery_send_code.delay(mobile, sms_code)  # 调用delay()方法
+        # from celery_tasks.sms.tasks import celery_send_code  # celery异步发送短信验证码        有问题
+        # celery_send_code.delay(mobile, sms_code)  # 调用delay()方法
 
-        # from libs.yuntongxun.sms import CCP
-        # # CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
-        # CCP().send_template_sms(mobile, [sms_code, 2], 1)  # 发送验证码
+        from libs.yuntongxun.sms import CCP
+        # CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
+        CCP().send_template_sms(mobile, [sms_code, 5], 1)  # 发送验证码
 
         return JsonResponse({'code': 0, 'errmsg': '验证码发送成功'})  # 返回响应
 
