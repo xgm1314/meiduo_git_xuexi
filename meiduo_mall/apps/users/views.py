@@ -9,7 +9,7 @@ import json
 
 
 class UsernameCountView(View):
-    ''' 用户名验证 '''
+    """ 用户名验证 """
 
     def get(self, request, username):
         # if not re.match('[a-zA-Z0-9_-]{5,20}', username):
@@ -21,7 +21,7 @@ class UsernameCountView(View):
 
 
 class UserMobileCountView(View):
-    ''' 手机号验证 '''
+    """ 手机号验证 """
 
     def get(self, request, mobile):
         count = User.objects.filter(mobile=mobile).count()
@@ -32,7 +32,7 @@ class UserMobileCountView(View):
 
 
 class RegisterView(View):
-    ''' 用户注册 '''
+    """ 用户注册 """
 
     def post(self, request):
         # 接受收据JSON
@@ -99,9 +99,6 @@ class LoginView(View):
         username = body_dict.get('username')
         password = body_dict.get('password')
         remembered = body_dict.get('remembered')
-        # 验证数据
-        if not all([username, password]):
-            return JsonResponse({'code': 400, 'errmsg': '请填写用户名或密码'})
 
         # 验证是以账号登录还是手机号登录
         # 可以根据修改User.USERNAME_FIELD字段来影响authenticate的查询
@@ -110,6 +107,9 @@ class LoginView(View):
         else:
             User.USERNAME_FIELD = 'username'
 
+        # 验证数据
+        if not all([username, password]):
+            return JsonResponse({'code': 400, 'errmsg': '请填写用户名或密码'})
         # 验证账号或者密码是否正确
         from django.contrib.auth import authenticate
         user = authenticate(username=username, password=password)
@@ -145,7 +145,14 @@ from utils.views import LoginRequiredJSONMixin
 
 
 class CenterView(LoginRequiredJSONMixin, View):
-    """ 用户中心 """
+    """ 用户中心 获取个人信息 """
 
     def get(self, request):
-        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+        # request.user 就是已经登录的用户信息
+        info_data = {
+            'username': request.user.username,
+            'mobile': request.user.mobile,
+            'email': request.user.email,
+            'email_active': request.user.email_active,
+        }
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'info_data': info_data})
