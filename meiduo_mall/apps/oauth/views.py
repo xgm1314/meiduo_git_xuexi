@@ -1,17 +1,15 @@
-from django.shortcuts import render
-
 # Create your views here.
-from django.views import View
-from django.http import JsonResponse
-from django.contrib.auth import login
 import json
 import re
 
 from QQLoginTool.QQtool import OAuthQQ
-from meiduo_mall import settings
-from apps.oauth.models import OauthQQUser
+from django.contrib.auth import login
+from django.http import JsonResponse
+from django.views import View
 
+from apps.oauth.models import OauthQQUser
 from apps.users.models import User
+from meiduo_mall import settings
 
 
 class QQLoginView(View):
@@ -67,7 +65,7 @@ class OauthQQView(View):
         if not re.match(r'1[345789]\d{9}', mobile):  # 校验手机号
             return JsonResponse({'code': 400, 'errmsg': '手机号格式错误'})
 
-        sms_code_client = request.POST.get('sms_code')  # 获取传入的短信验证码
+        sms_code_client = request.POST.get(sms_code)  # 获取传入的短信验证码
         from django_redis import get_redis_connection
         redis_conn = get_redis_connection('code')  # 连接数据库
         sms_code_server = redis_conn.get('sms_%s' % mobile)
@@ -86,3 +84,12 @@ class OauthQQView(View):
         response = JsonResponse({'code': 0, 'errmsg': 'ok'})
         response.set_cookie('username', user.username)  # 设置cookie信息
         return response  # 返回数据
+
+
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer  # 导入加密类
+
+from meiduo_mall import settings
+
+s = Serializer(secret_key=settings.SECRET_KEY, expires_in=3600)  # 创建加密对象
+token = s.dumps({'openid': '1234567890'})  # 加密数据
+s.loads(token)  # 解密数据
