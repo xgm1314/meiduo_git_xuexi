@@ -78,15 +78,16 @@ class OauthQQView(View):
         if sms_code_client != sms_code_server.decode():
             return JsonResponse({'code': 400, 'errmsg': '短信验证码有误'})
 
+        from apps.oauth.utils import check_access_token
+        openid = check_access_token(access_token)
+        if openid is None:
+            return JsonResponse({'code': 400, 'errmsg': '参数丢失'})
+
         try:
             user = User.objects.get(mobile=mobile)  # 查询数据库是否有该用户
         except User.DoesNotExist:
             user = User.objects.create_user(username=mobile, mobile=mobile, password=password)  # 没有用户创建用户
         else:
-
-            from apps.oauth.utils import check_access_token
-            openid = check_access_token(access_token)
-
             OauthQQUser.objects.create(user=user, openid=openid)  # 添加绑定用户信息
         login(request, user)  # 设置session
         response = JsonResponse({'code': 0, 'errmsg': 'ok'})

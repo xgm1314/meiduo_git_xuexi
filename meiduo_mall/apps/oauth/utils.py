@@ -3,6 +3,9 @@
 # @Author : 
 # @File : utils
 # @Project : meiduo_mall
+
+# 创建openid加密的函数方法
+
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import BadData, BadSignature, SignatureExpired
 from meiduo_mall import settings
@@ -23,4 +26,4 @@ def check_access_token(token):
     except Exception:
         return None
     else:
-        return result.get('openid')
+        return result.get('openid')  # 获取加密的openid
