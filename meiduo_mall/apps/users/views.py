@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 
 # Create your views here.
@@ -173,22 +172,45 @@ class EmailView(LoginRequiredJSONMixin, View):
         user.save()
 
         # 对需要传入的数据进行加密
+
+        # 发送邮件
+        subject = 'fyq_love_xgm'  # 主题
+        message = 'fyq_love_xgm'  # 邮件内容
+        from_email = 'fyq_love_xgm<fyq31780209@163.com>'  # 发件人
+        recipient_list = [email]  # 收件人列表
+        # html_message = '点击激活:<a href="http://www.baidu.com/?token=%s">激活</a>' % token_id
+
+        # send_mail(
+        #     subject=subject,
+        #     message=message,
+        #     from_email=from_email,
+        #     recipient_list=recipient_list,
+        #     html_message=html_message)
+
         from apps.users.utils import generic_email_verify_token
         token_id = generic_email_verify_token(request.user.id)
 
-        # 发送邮件
-        from django.core.mail import send_mail
-        subject = '主题'  # 主题
-        message = 'fyq_love_xgm'  # 邮件内容
-        from_email = 'fyq_love_xgm<fyq31780209@163.com>'  # 发件人
-        recipient_list = ['153094236@qq.com']  # 收件人列表
-        html_message = '点击激活:<a href="http://www.baidu.com/?token=%s">激活</a>' % token_id
+        verify_url = "http://www.meiduo.site:8080/success_verify_email.html?token=%s" % token_id
+        # 4.2 组织我们的激活邮件
+        html_message = '<p>尊敬的用户您好！</p>' \
+                       '<p>感谢您使用美多商城。</p>' \
+                       '<p>您的邮箱为：%s 。请点击此链接激活您的邮箱：</p>' \
+                       '<p><a href="%s">%s<a></p>' % (email, verify_url, verify_url)
 
-        send_mail(
+        # send_mail(
+        #     subject=subject,
+        #     message=message,
+        #     from_email=from_email,
+        #     recipient_list=recipient_list,
+        #     html_message=html_message)
+
+        # 使用celery异步发送邮件
+        from celery_tasks.email.tasks import celery_send_email
+        celery_send_email.delay(  # 调用delay()方法邮件发送不出去
             subject=subject,
             message=message,
             from_email=from_email,
             recipient_list=recipient_list,
             html_message=html_message)
 
-        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+        return JsonResponse({'code': 0, 'errmsg': email})

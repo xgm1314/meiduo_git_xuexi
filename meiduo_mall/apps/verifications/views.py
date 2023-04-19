@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.http import JsonResponse
 # Create your views here.
@@ -52,16 +51,16 @@ class SmsCodeView(View):
         # redis_cli.setex(mobile, 60, sms_code)  # 保存验证码
         # redis_cli.setex('send_flag_%s' % mobile, 60, 1)  # 发送短信后,标记发送短信的标记
 
-        # from celery_tasks.sms.tasks import celery_send_code  # celery异步发送短信验证码        有问题
-        # celery_send_code.delay(mobile, sms_code)  # 调用delay()方法
+        from celery_tasks.sms.tasks import celery_send_code  # celery异步发送短信验证码      有问题
+        celery_send_code(mobile, sms_code)  # 不调用delay()方法无法完成异步发送
 
-        from libs.yuntongxun.sms import CCP
-        # CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
-        CCP().send_template_sms(mobile, [sms_code, 5], 1)  # 发送验证码
+        # from libs.yuntongxun.sms import CCP
+        # # CCP().send_template_sms('17854157598', [sms_code, 2], 1)  # 发送验证码
+        # CCP().send_template_sms(mobile, [sms_code, 5], 1)  # 发送验证码
 
         return JsonResponse({'code': 0, 'errmsg': '验证码发送成功'})  # 返回响应
 
-    def get_receive(self, request, mobile):
+    def post(self, request, mobile):
         sms_code_client = request.POST.get('sms_code')  # 获取传入的短信验证码
         from django_redis import get_redis_connection
         redis_conn = get_redis_connection('code')  # 连接数据库
