@@ -156,3 +156,39 @@ class CenterView(LoginRequiredJSONMixin, View):
             'email_active': request.user.email_active,
         }
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'info_data': info_data})
+
+
+class EmailView(LoginRequiredJSONMixin, View):
+    """ 添加邮箱 """
+
+    def put(self, request):
+        body_dict = json.loads(request.body.decode())  # 接受请求
+        email = body_dict.get('email')  # 获取数据
+        # 验证数据
+        if not re.match(r'^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}', email):
+            return JsonResponse({'code': 400, 'errmsg': '邮箱格式不正确'})
+        # 保存邮箱地址
+        user = request.user  # 或许用户登录的对象
+        user.email = email
+        user.save()
+
+        # 对需要传入的数据进行加密
+        from apps.users.utils import generic_email_verify_token
+        token_id = generic_email_verify_token(request.user.id)
+
+        # 发送邮件
+        from django.core.mail import send_mail
+        subject = '主题'  # 主题
+        message = 'fyq_love_xgm'  # 邮件内容
+        from_email = 'fyq_love_xgm<fyq31780209@163.com>'  # 发件人
+        recipient_list = ['153094236@qq.com']  # 收件人列表
+        html_message = '点击激活:<a href="http://www.baidu.com/?token=%s">激活</a>' % token_id
+
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=from_email,
+            recipient_list=recipient_list,
+            html_message=html_message)
+
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})

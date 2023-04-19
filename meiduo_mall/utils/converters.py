@@ -20,3 +20,11 @@ class UserMobileConverter:
 
     def to_python(self, value):
         return value
+
+
+class EmailMobileConverter:
+    ''' 邮箱校验 '''
+    regex = '^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$'
+
+    def to_python(self, value):
+        return value
