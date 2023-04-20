@@ -142,7 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # redis的配置
 # session保存在redis的1号库中
 CACHES = {
-    "default": {  # redis数据库的0号库作为预留
+    "default": {  # redis数据库的0号库作为预留，cache配置的缓存
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/0",
         "OPTIONS": {
