@@ -1,5 +1,9 @@
 from django.db import models
 
+"""
+导入 .sql 文件 source + .sql 文件路径
+"""
+
 
 # Create your models here.
 class Area(models.Model):
