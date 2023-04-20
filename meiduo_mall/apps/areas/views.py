@@ -19,3 +19,31 @@ class AreaView(View):
                 'name': province.name
             })
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'province_list': province_list})
+
+
+class SubAreaView(View):
+    """ 查询市、区县 """
+
+    def get(self, request, id):
+        # # 方式一:
+        # up_level=Area.objects.filter(id=id)  # 获取市
+        # down_level = Area.objects.filter(parent_id=id)  # 获取区县对象
+
+        # 方式二:
+        up_level = Area.objects.get(id=id)  # 获取市
+        down_level = up_level.subs.all()  # 获取区县对象
+
+        data_list = []
+        # # 方式一:
+        # for i in up_level:
+        #     data_list.append({'id': i.id, 'name': i.name})
+
+        # # 方式二:
+        data_list.append({'id': id, 'name': up_level.name})
+
+        for item in down_level:
+            data_list.append({
+                'id': item.id,
+                'name': item.name
+            })
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'sub_data': {'subs': data_list}})
