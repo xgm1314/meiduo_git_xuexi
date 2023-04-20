@@ -14,3 +14,13 @@ def generic_email_verify_token(user_id):
     s = Serializer(secret_key=settings.SECRET_KEY, expires_in=3600 * 24)  # 加密一天有效
     token = s.dumps({'user_id': user_id})
     return token.decode()
+
+
+def check_verify_token(token):
+    s = Serializer(secret_key=settings.SECRET_KEY, expires_in=3600 * 24)
+    try:
+        res = s.loads(token)
+    except Exception as e:
+        return None
+    else:
+        return res.get('user_id')

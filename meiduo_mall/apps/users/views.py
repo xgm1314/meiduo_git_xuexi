@@ -214,3 +214,21 @@ class EmailView(LoginRequiredJSONMixin, View):
             html_message=html_message)
 
         return JsonResponse({'code': 0, 'errmsg': email})
+
+
+class EmailVerifyView(View):
+    """ 用户连接激活 """
+
+    def put(self, request):
+        params = request.GET.get('token')  # 获取参数
+        # params = 'eyJhbGciOiJIUzUxMiIsImlhdCI6MTY4MTkwNTA5OSwiZXhwIjoxNjgxOTkxNDk5fQ.eyJ1c2VyX2lkIjoyMH0.XcJd37ETM9rEKi_Z2Uu7oI6ylDOduNKwty04N5-y4aosIyy98CXTLL2MoGu2BENsapZO-s3kWoiXYYHQdRoTpg'
+        if params is None:
+            return JsonResponse({'code': 400, 'errmsg': '参数缺失'})
+        from apps.users.utils import check_verify_token
+        user_id = check_verify_token(params)
+        if user_id is None:
+            return JsonResponse({'code': 400, 'errmsg': '参数缺失'})
+        user = User.objects.get(id=user_id)  # 根据id查找用户信息
+        user.email_active = True  # 修改激活状态
+        user.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})  # 返回数据
