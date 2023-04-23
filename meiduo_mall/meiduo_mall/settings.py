@@ -46,7 +46,9 @@ INSTALLED_APPS = [
 
     'corsheaders',  # CORS跨域设置
 
-    'apps.areas'
+    'apps.areas',
+    'apps.goods',
+    'apps.contents',
 ]
 
 MIDDLEWARE = [
