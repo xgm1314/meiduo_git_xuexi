@@ -1,8 +1,10 @@
+from django.contrib.messages import constants
 from django.http import JsonResponse
 
 # Create your views here.
 from django.views import View
-from apps.users.models import User
+
+from apps.users.models import User, Address
 import re
 import json
 
@@ -232,3 +234,76 @@ class EmailVerifyView(View):
         user.email_active = True  # 修改激活状态
         user.save()
         return JsonResponse({'code': 0, 'errmsg': 'ok'})  # 返回数据
+
+
+class AddressCreateView(LoginRequiredJSONMixin, View):
+    """ 新增地址 """
+    """{
+        "receiver":"fyq",
+        "province":"370000",
+        "city":"371700",
+        "district":"371721",
+        "place":"cx",
+        "mobile":"13578978945"
+    }"""
+
+    def post(self, request):
+        body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
+        receiver = body_dict.get('receiver')
+        province = body_dict.get('province')
+        city = body_dict.get('city')
+        district = body_dict.get('district')
+        place = body_dict.get('place')
+        mobile = body_dict.get('mobile')
+        tel = body_dict.get('tel')
+        email = body_dict.get('email')
+        user = request.user
+        user_id = request.user.id
+        # 验证数据
+        count = request.user.addresses.count()
+        # if count == 0:
+        #     user = User.objects.get(id=user_id)
+        #     print(type(user.default_address_id))
+        #     user.default_address_id = True
+        #     user.save()
+
+        if count > 20:  # 设置最大收货地址
+            return JsonResponse({'code': 400, 'errmsg': '超过最大收货地址数量'})
+
+        if not all([receiver, province, city, district, place, mobile]):
+            return JsonResponse({'code': 400, 'errmsg': '请填写必要参数'})
+
+        if not re.match(r'1[345789]\d{9}', mobile):
+            return JsonResponse({'code': 400, 'errmsg': '手机号格式错误'})
+
+        if email is None:
+            pass
+        else:
+            if not re.match(r'^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}', email):
+                return JsonResponse({'code': 400, 'errmsg': '邮箱格式不正确'})
+
+        new_address = Address.objects.create(
+            user=user,
+            title=receiver,
+            receiver=receiver,
+            province_id=province,
+            city_id=city,
+            district_id=district,
+            place=place,
+            mobile=mobile,
+            tel=tel,
+            email=email
+        )
+        address = {
+            'id': new_address.id,
+            'title': new_address.receiver,
+            'receiver': new_address.receiver,
+            'province': new_address.province.name,
+            'city': new_address.city.name,
+            'district': new_address.district.name,
+            'place': new_address.place,
+            'mobile': new_address.mobile,
+            'tel': new_address.tel,
+            'email': new_address.email
+        }
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address})
