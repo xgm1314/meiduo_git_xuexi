@@ -261,11 +261,6 @@ class AddressCreateView(LoginRequiredJSONMixin, View):
         user_id = request.user.id
         # 验证数据
         count = request.user.addresses.count()
-        # if count == 0:
-        #     user = User.objects.get(id=user_id)
-        #     print(type(user.default_address_id))
-        #     user.default_address_id = True
-        #     user.save()
 
         if count > 20:  # 设置最大收货地址
             return JsonResponse({'code': 400, 'errmsg': '超过最大收货地址数量'})
@@ -306,6 +301,13 @@ class AddressCreateView(LoginRequiredJSONMixin, View):
             'tel': new_address.tel,
             'email': new_address.email
         }
+        # 如果添加的是第一个地址，则默认为收货地址
+        if count == 0:
+            user = User.objects.get(id=user_id)
+            # print(type(user.default_address_id))
+            user.default_address_id = new_address.id
+            user.save()
+
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address})
 
 
