@@ -6,7 +6,7 @@
 from django.urls import path
 from apps.users.views import UsernameCountView, UserMobileCountView, RegisterView, LoginView, LogoutView, CenterView, \
     EmailView, EmailVerifyView, AddressCreateView, AddressView, AddressModifyView, AddressLogicDeleteView, \
-    AddressCompleteDeleteView, AddressModifyAddressView, AddressModifyTitleView
+    AddressCompleteDeleteView, AddressModifyAddressView, AddressModifyTitleView, UserModifyPassword
 
 urlpatterns = [
     path('username/<username:username>/count/', UsernameCountView.as_view()),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('addresses/<nid>/complete/delete/', AddressCompleteDeleteView.as_view()),
     path('addresses/<nid>/modify/address/', AddressModifyAddressView.as_view()),
     path('addresses/<nid>/modify/title/', AddressModifyTitleView.as_view()),
+    path('users/modify/password/', UserModifyPassword.as_view()),
 ]

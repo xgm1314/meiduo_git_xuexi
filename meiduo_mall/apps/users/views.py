@@ -389,7 +389,7 @@ class AddressLogicDeleteView(LoginRequiredJSONMixin, View):
             address_delete = Address.objects.get(user=user, id=nid, is_deleted=False)
         except Exception as e:
             return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
-        address_delete.is_deleted = 1
+        address_delete.is_deleted = 1  # 将逻辑删除标记置为1
         address_delete.save()
         return JsonResponse({'code': 0, 'errmsg': 'ok'})
 
@@ -416,10 +416,10 @@ class AddressModifyAddressView(LoginRequiredJSONMixin, View):
             address_id = Address.objects.get(id=nid)
         except Exception as e:
             return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
-        count = request.user.addresses.count()
-        if count < 1:
+        count = request.user.addresses.count()  # 查看该用户的地址数量
+        if count < 1:  # 0个
             return JsonResponse({'code': 0, 'errmsg': '请添加地址'})
-        elif count < 2:
+        elif count < 2:  # 1个
             return JsonResponse({'code': 0, 'errmsg': '地址过少，请添加'})
         else:
             user.default_address_id = address_id
@@ -439,4 +439,16 @@ class AddressModifyTitleView(LoginRequiredJSONMixin, View):
         body_dict = json.loads(request.body.decode())
         address_id.title = body_dict.get('title')
         address_id.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class UserModifyPassword(LoginRequiredJSONMixin, View):
+    """ 修改用户密码 """
+
+    def post(self, request):
+        user = request.user
+        body_dict = json.loads(request.body.decode())  # 获取前端数据
+        user.password = body_dict.get('password')
+        user.save()
+        LogoutView()  # 修改密码后重新登录
         return JsonResponse({'code': 0, 'errmsg': 'ok'})
