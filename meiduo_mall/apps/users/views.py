@@ -307,3 +307,26 @@ class AddressCreateView(LoginRequiredJSONMixin, View):
             'email': new_address.email
         }
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address})
+
+
+class AddressView(View):
+    """ 查询地址 """
+
+    def get(self, request):
+        user = request.user  # 查询数据
+        address = Address.objects.filter(user=user, is_deleted=False)
+        address_list = []
+        for item in address:  # 将对象转化为字典
+            address_list.append({
+                'id': item.id,
+                'title': item.receiver,
+                'receiver': item.receiver,
+                'province': item.province.name,
+                'city': item.city.name,
+                'district': item.district.name,
+                'place': item.place,
+                'mobile': item.mobile,
+                'tel': item.tel,
+                'email': item.email
+            })
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address_list})
