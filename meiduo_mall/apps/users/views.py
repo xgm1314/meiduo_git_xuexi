@@ -425,3 +425,18 @@ class AddressModifyAddressView(LoginRequiredJSONMixin, View):
             user.default_address_id = address_id
             user.save()
             return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class AddressModifyTitleView(LoginRequiredJSONMixin, View):
+    """ 更改标题 """
+
+    def post(self, request, nid):
+        user = request.user
+        try:
+            address_id = Address.objects.get(id=nid)
+        except Exception as e:
+            return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
+        body_dict = json.loads(request.body.decode())
+        address_id.title = body_dict.get('title')
+        address_id.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})
