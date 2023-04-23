@@ -5,7 +5,8 @@
 # @Project : meiduo_mall
 from django.urls import path
 from apps.users.views import UsernameCountView, UserMobileCountView, RegisterView, LoginView, LogoutView, CenterView, \
-    EmailView, EmailVerifyView, AddressCreateView, AddressView, AddressModifyView
+    EmailView, EmailVerifyView, AddressCreateView, AddressView, AddressModifyView, AddressLogicDeleteView, \
+    AddressCompleteDeleteView
 
 urlpatterns = [
     path('username/<username:username>/count/', UsernameCountView.as_view()),
@@ -19,4 +20,6 @@ urlpatterns = [
     path('addresses/create/', AddressCreateView.as_view()),
     path('addresses/', AddressView.as_view()),
     path('addresses/<nid>/modify/', AddressModifyView.as_view()),
+    path('addresses/<nid>/logic/delete/', AddressLogicDeleteView.as_view()),
+    path('addresses/<nid>/complete/delete/', AddressCompleteDeleteView.as_view()),
 ]

@@ -376,3 +376,30 @@ class AddressModifyView(LoginRequiredJSONMixin, View):
         address.email = email
         address.save()
         return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class AddressLogicDeleteView(LoginRequiredJSONMixin, View):
+    """ 逻辑删除地址 """
+
+    def get(self, request, nid):
+        user = request.user
+        try:
+            address_delete = Address.objects.get(user=user, id=nid, is_deleted=False)
+        except Exception as e:
+            return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
+        address_delete.is_deleted = 1
+        address_delete.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class AddressCompleteDeleteView(LoginRequiredJSONMixin, View):
+    """ 彻底删除地址 """
+
+    def get(self, request, nid):
+        user = request.user
+        try:
+            Address.objects.get(id=nid).delete()
+        except Exception as e:
+            return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
+        else:
+            return JsonResponse({'code': 0, 'errmsg': 'ok'})
