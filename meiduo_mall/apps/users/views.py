@@ -277,7 +277,7 @@ class AddressCreateView(LoginRequiredJSONMixin, View):
             return JsonResponse({'code': 400, 'errmsg': '手机号格式错误'})
 
         if email is None:
-            pass
+            email = ''
         else:
             if not re.match(r'^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}', email):
                 return JsonResponse({'code': 400, 'errmsg': '邮箱格式不正确'})
@@ -309,7 +309,7 @@ class AddressCreateView(LoginRequiredJSONMixin, View):
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address})
 
 
-class AddressView(View):
+class AddressView(LoginRequiredJSONMixin, View):
     """ 查询地址 """
 
     def get(self, request):
@@ -330,3 +330,49 @@ class AddressView(View):
                 'email': item.email
             })
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'address': address_list})
+
+
+class AddressModifyView(LoginRequiredJSONMixin, View):
+    """ 修改地址 """
+
+    def post(self, request, nid):
+        user = request.user
+        try:
+            address = Address.objects.get(user=user, id=nid, is_deleted=False)
+            # print(address)
+        except Exception as e:
+            return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
+
+        body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
+        receiver = body_dict.get('receiver')
+        province = body_dict.get('province')
+        city = body_dict.get('city')
+        district = body_dict.get('district')
+        place = body_dict.get('place')
+        mobile = body_dict.get('mobile')
+        tel = body_dict.get('tel')
+        email = body_dict.get('email')
+
+        if not all([receiver, province, city, district, place, mobile]):
+            return JsonResponse({'code': 400, 'errmsg': '请填写必要参数'})
+
+        if not re.match(r'1[345789]\d{9}', mobile):
+            return JsonResponse({'code': 400, 'errmsg': '手机号格式错误'})
+
+        if email is None:
+            email = ''
+        else:
+            if not re.match(r'^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}', email):
+                return JsonResponse({'code': 400, 'errmsg': '邮箱格式不正确'})
+
+        address.title = receiver
+        address.receiver = receiver
+        address.province_id = province
+        address.city_id = city
+        address.district_id = district
+        address.place = place
+        address.mobile = mobile
+        address.tel = tel
+        address.email = email
+        address.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})

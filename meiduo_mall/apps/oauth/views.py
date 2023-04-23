@@ -30,8 +30,8 @@ class OauthQQView(View):
     """ 获取openid """
 
     def get(self, request):
-        # code = request.GET.get('code')  # 获取code
-        code = '0F43657877BACA9A390C04FAF0B58FE3'
+        code = request.GET.get('code')  # 获取code
+        # code = '0F43657877BACA9A390C04FAF0B58FE3'
         qq = OAuthQQ(  # 通过code换取token
             client_id=settings.QQ_CLIENT_ID,  # appid
             client_secret=settings.QQ_CLIENT_SECRET,  # appsecret
