@@ -405,3 +405,23 @@ class AddressCompleteDeleteView(LoginRequiredJSONMixin, View):
             return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
         else:
             return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class AddressModifyAddressView(LoginRequiredJSONMixin, View):
+    """ 更改默认地址 """
+
+    def get(self, request, nid):
+        user = request.user
+        try:
+            address_id = Address.objects.get(id=nid)
+        except Exception as e:
+            return JsonResponse({'code': 400, 'errmsg': '该地址不存在'})
+        count = request.user.addresses.count()
+        if count < 1:
+            return JsonResponse({'code': 0, 'errmsg': '请添加地址'})
+        elif count < 2:
+            return JsonResponse({'code': 0, 'errmsg': '地址过少，请添加'})
+        else:
+            user.default_address_id = address_id
+            user.save()
+            return JsonResponse({'code': 0, 'errmsg': 'ok'})
