@@ -4,8 +4,9 @@
 # @File : urls
 # @Project : meiduo_mall
 from django.urls import path
-from apps.goods.views import IndexView
+from apps.goods.views import IndexView,ListView
 
 urlpatterns = [
     path('index/', IndexView.as_view()),
+    path('list/<nid>/skus/', ListView.as_view()),
 ]
