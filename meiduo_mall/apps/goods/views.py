@@ -77,3 +77,26 @@ class ListView(View):
             })
         total = paginator.num_pages
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'list': sku_list, 'count': total, 'breadcrumb': breadcrumb})
+
+
+from haystack.views import SearchView
+
+
+class SKUSearchView(SearchView):
+    """ 搜索框 """
+
+    def create_response(self):
+        """ 获取搜索结果 """
+        context = self.get_context()  # 通过断点来判断返回的数据类型
+        sku_list = []
+        for sku in context['page'].object_list:
+            sku_list.append({
+                'id': sku.object.id,
+                'name': sku.object.name,
+                'price': sku.object.price,
+                'default_image_url': sku.object.default_image.url,
+                'searchkey': context.get('query'),
+                'page_size': context['page'].paginator.num_pages,
+                'count': context['page'].paginator.count
+            })
+        return JsonResponse(sku_list, safe=False)
