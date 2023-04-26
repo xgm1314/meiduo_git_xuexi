@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'apps.areas',
     'apps.goods',
     'apps.contents',
+
+    'haystack',  # 注册haystack全文搜索配置
+
 ]
 
 MIDDLEWARE = [
@@ -331,3 +334,12 @@ EMAIL_HOST_PASSWORD = 'WBGDQNICFJVQSEWZ'
 # EMAIL_HOST_PASSWORD = '123456abc'
 
 EMAIL_FROM = 'fyq_love_xgm.com'
+
+# ES的配置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://192.168.3.150:9200/',  # 本机ip，端口号默认9200
+        'INDEX_NAME': 'haystack',  # 索引名字
+    },
+}

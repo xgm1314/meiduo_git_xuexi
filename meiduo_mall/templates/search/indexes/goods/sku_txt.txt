@@ -1,0 +1,5 @@
+#模板 指定字段
+# object 就是代表要检索的模型实例 如：objec=SKU()
+{{object.name}}
+{{object.caption}}
+{{object.id}}

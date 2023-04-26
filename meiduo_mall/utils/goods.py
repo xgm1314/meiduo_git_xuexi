@@ -5,8 +5,9 @@ from apps.goods.models import GoodsChannel
 """
 分类数据
 """
-def get_categories():
 
+
+def get_categories():
     # 定义一个有序字典对象
     categories = OrderedDict()
 
@@ -23,10 +24,10 @@ def get_categories():
         if group_id not in categories:
             # 我们就把 组id 添加到 有序字典中
             # 并且作为 key值, value值 是 {'channels': [], 'sub_cats': []}
-            categories[group_id] =  {
-                                     'channels': [],
-                                     'sub_cats': []
-                                    }
+            categories[group_id] = {
+                'channels': [],
+                'sub_cats': []
+            }
 
         # 获取当前频道的分类名称
         cat1 = channel.category
@@ -34,9 +35,9 @@ def get_categories():
         # 给刚刚创建的字典中, 追加具体信息:
         # 即, 给'channels' 后面的 [] 里面添加如下的信息:
         categories[group_id]['channels'].append({
-            'id':   cat1.id,
+            'id': cat1.id,
             'name': cat1.name,
-            'url':  channel.url
+            'url': channel.url
         })
 
         # 根据 cat1 的外键反向, 获取下一级(二级菜单)的所有分类数据, 并遍历:
@@ -54,16 +55,20 @@ def get_categories():
             categories[group_id]['sub_cats'].append(cat2)
 
     return categories
+
+
 """
 面包屑
 """
+
+
 def get_breadcrumb(category):
     '''接收最低级别的类别, 获取各个类别的名称, 返回'''
 
     dict = {
-        'cat1':'',
-        'cat2':'',
-        'cat3':'',
+        'cat1': '',
+        'cat2': '',
+        'cat3': '',
     }
 
     if category.parent is None:
@@ -78,9 +83,12 @@ def get_breadcrumb(category):
 
     return dict
 
+
 """
 规格选项
 """
+
+
 def get_goods_specs(sku):
     # 构建当前商品的规格键
     sku_specs = sku.specs.order_by('spec_id')
@@ -120,10 +128,3 @@ def get_goods_specs(sku):
         spec.spec_options = spec_options
 
     return goods_specs
-
-
-
-
-
-
-
