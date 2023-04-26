@@ -343,3 +343,4 @@ HAYSTACK_CONNECTIONS = {
         'INDEX_NAME': 'haystack',  # 索引名字
     },
 }
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5  # 设置搜索每页显示的数量

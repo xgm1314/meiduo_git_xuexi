@@ -100,3 +100,27 @@ class SKUSearchView(SearchView):
                 'count': context['page'].paginator.count
             })
         return JsonResponse(sku_list, safe=False)
+
+
+from utils.goods import get_goods_specs
+
+
+class DetailView(View):
+    def get(self, request, sku_id):
+        try:
+            sku = SKU.objects.get(id=sku_id)
+        except SKU.DoesNotExist:
+            return JsonResponse({'code': 0, 'errmsg': '该数据不存在'})
+        # 分类数据
+        categories = get_categories()
+        # 面包屑数据
+        breadcrumb = get_breadcrumb(sku.category)
+        # 规格信息
+        goods_specs = get_goods_specs(sku)
+        content = {
+            'categories': categories,
+            'breadcrumb': breadcrumb,
+            'sku': sku,
+            'specs': goods_specs,
+        }
+        return render(request, 'detail.html', content)
