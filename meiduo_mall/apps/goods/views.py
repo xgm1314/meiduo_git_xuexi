@@ -108,6 +108,7 @@ from utils.goods import get_goods_specs
 
 
 class DetailView(View):
+    """ 详情页面展示 """
     def get(self, request, sku_id):
         try:
             sku = SKU.objects.get(id=sku_id)
