@@ -460,6 +460,7 @@ class UserHistoryView(LoginRequiredJSONMixin, View):
     """ 用户浏览记录 """
 
     def post(self, request):
+        """ 添加浏览记录 """
         user = request.user
         body_dict = json.loads(request.body.decode())  # 或许前端传入的数据
         sku_id = body_dict.get('sku_id')
@@ -468,7 +469,25 @@ class UserHistoryView(LoginRequiredJSONMixin, View):
         except SKU.DoesNotExist:
             return JsonResponse({'code': 400, 'errmsg': '该商品不存在'})
         redis_cil = get_redis_connection('history')  # 连接redis数据库
-        redis_cil.lrem('history_%s' % user.id, sku_id, sku_id)  # 去除该用户下的该商品的记录,中间的sku_id是判断count 的指令
+        redis_cil.lrem('history_%s' % user.id, 0, sku_id)  # 去除该用户下的该商品的记录
         redis_cil.lpush('history_%s' % user.id, sku_id)  # 保存到redis数据库中
         redis_cil.ltrim('history_%s' % user.id, 0, 4)  # 保存前五条数据
         return JsonResponse({'coed': 0, 'errmsg': 'ok'})
+
+    def get(self, request):
+        """ 查询浏览记录 """
+        redis_cli = get_redis_connection('history')  # 连接redis数据库
+        ids = redis_cli.lrange('history_%s' % request.user.id, 0, 4)  # 获取redis数据库list数值
+        history_list = []
+        for sku_id in ids:
+            try:
+                sku = SKU.objects.get(id=sku_id)  # 根据id查询数据
+            except SKU.DoesNotExist:
+                return JsonResponse({'code': 400, 'errmsg': '该商品不存在'})
+            history_list.append({  # 将对象数据转化为字典数据
+                'id': sku.id,
+                'name': sku.name,
+                'default_image_url': sku.default_image.url,
+                'price': sku.price
+            })
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'skus': history_list})
