@@ -1,10 +1,12 @@
 from django.contrib.messages import constants
 from django.http import JsonResponse
+from django_redis import get_redis_connection
 
 # Create your views here.
 from django.views import View
 
 from apps.users.models import User, Address
+from apps.goods.models import SKU
 import re
 import json
 
@@ -452,3 +454,21 @@ class UserModifyPassword(LoginRequiredJSONMixin, View):
         user.save()
         LogoutView()  # 修改密码后重新登录
         return JsonResponse({'code': 0, 'errmsg': 'ok'})
+
+
+class UserHistoryView(LoginRequiredJSONMixin, View):
+    """ 用户浏览记录 """
+
+    def post(self, request):
+        user = request.user
+        body_dict = json.loads(request.body.decode())  # 或许前端传入的数据
+        sku_id = body_dict.get('sku_id')
+        try:
+            sku = SKU.objects.get(id=sku_id)  # 查询商品id
+        except SKU.DoesNotExist:
+            return JsonResponse({'code': 400, 'errmsg': '该商品不存在'})
+        redis_cil = get_redis_connection('history')  # 连接redis数据库
+        redis_cil.lrem('history_%s' % user.id, sku_id, sku_id)  # 去除该用户下的该商品的记录,中间的sku_id是判断count 的指令
+        redis_cil.lpush('history_%s' % user.id, sku_id)  # 保存到redis数据库中
+        redis_cil.ltrim('history_%s' % user.id, 0, 4)  # 保存前五条数据
+        return JsonResponse({'coed': 0, 'errmsg': 'ok'})
