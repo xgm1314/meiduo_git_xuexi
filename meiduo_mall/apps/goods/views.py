@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 
 from django.shortcuts import render
 from django.views import View
@@ -6,7 +6,7 @@ from collections import Counter, OrderedDict
 from django.http import JsonResponse
 
 # Create your views here.
-from apps.goods.models import GoodsChannel, GoodsCategory, SKU
+from apps.goods.models import GoodsChannel, GoodsCategory, SKU, GoodsVisitCount
 from apps.contents.models import ContentCategory
 from utils.goods import get_categories
 from utils.goods import get_breadcrumb
@@ -109,6 +109,7 @@ from utils.goods import get_goods_specs
 
 class DetailView(View):
     """ 详情页面展示 """
+
     def get(self, request, sku_id):
         try:
             sku = SKU.objects.get(id=sku_id)
@@ -127,3 +128,25 @@ class DetailView(View):
             'specs': goods_specs,
         }
         return render(request, 'detail.html', content)
+
+
+class CategoryVisitCountView(View):
+    """ 分类商品统计 """
+
+    def post(self, request, category_id):
+        try:
+            # category = category_id
+            category = GoodsCategory.objects.get(id=category_id)  # 查询分类是否存在
+        except GoodsCategory.DoesNotExist:
+            return JsonResponse({'code': 400, 'errmsg': '没有此分类'})
+        today = date.today()  # 获取当天的时间
+        try:
+            gvc = GoodsVisitCount.objects.get(category=category, date=today)  # 查询分类当天是否有记录
+        except GoodsVisitCount.DoesNotExist:
+            # GoodsVisitCount.objects.create(category_id=115, date=today, count=1)  # 无记录新建
+            GoodsVisitCount.objects.create(category=category, date=today, count=1)  # 无记录新建
+
+        else:
+            gvc.count = gvc.count + 1  # 有记录更新
+            gvc.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})
