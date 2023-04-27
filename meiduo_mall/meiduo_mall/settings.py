@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'apps.contents',
 
     'haystack',  # 注册haystack全文搜索配置
+    'django_crontab',
 
 ]
 
@@ -344,3 +345,15 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5  # 设置搜索每页显示的数量
+
+"""
+定时任务（windows系统运行会出问题）
+CRONJOBS = [('*/1 * * * * ', 'apps.contents.crons.generic_meiduo_index', '>>' + os.path(BASE_DIR, 'logs/crontab.log'))]
+            M分 H时 D日 m月 d周         定时任务（函数）                                             日志
+查看已有定时任务：python manage.py crontab show
+添加定时任务：python manage.py crontab add
+删除定时任务：python manage.py crontab remove
+"""
+CRONJOBS = [
+    ('*/1 * * * * ', 'apps.contents.crons.generic_meiduo_index', '>>' + os.path.join(BASE_DIR, 'logs/crontab.log'))
+]
