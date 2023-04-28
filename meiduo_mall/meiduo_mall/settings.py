@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'haystack',  # 注册haystack全文搜索配置
     'django_crontab',
 
+    'apps.carts'
+
 ]
 
 MIDDLEWARE = [
@@ -172,6 +174,13 @@ CACHES = {
     "history": {  # 用户浏览记录保存到redis数据库的3号库
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/3",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+    "carts": {  # 用户购物车保存到redis数据库的4号库
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/4",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
