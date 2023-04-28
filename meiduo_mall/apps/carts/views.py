@@ -21,6 +21,8 @@ from django.http import JsonResponse
 
 from django.views import View
 from django_redis import get_redis_connection
+import pickle
+import base64
 
 from apps.goods.models import SKU
 
@@ -35,7 +37,7 @@ class CartView(View):
         count = body_dict.get('count')
         selected = body_dict.get('selected')
         user = request.user
-        print(user)
+        # print(user)
         # 验证数据
         try:
             sku = SKU.objects.get(id=sku_id)  # 查询数据库是否有该商品
@@ -54,12 +56,23 @@ class CartView(View):
                 redis_cli.sadd('selected_%s' % user.id, sku_id)  # 将是否被勾选的id存在redis的集合中
             return JsonResponse({'code': 0, 'errmsg': 'ok'})
         else:
-            carts = {  # 未登录用户，创建字典
-                sku_id: {'count': count, 'selected': selected}
+            cookie_carts = request.COOKIES.get('carts')  # 获取carts的cookie信息
+            if cookie_carts:
+                carts = pickle.loads(base64.b64decode(cookie_carts))  # 对carts的字典进行解码
+            else:
+                carts = {}  # 未登录用户，创建字典
+
+            if sku_id in carts:  # 如果该商品在购物车内
+                old_count = carts[sku_id]['count']
+                count = old_count + count
+
+            carts[sku_id] = {
+                'count': count,
+                'selected': selected
             }
-            import pickle
+
             data_bytes = pickle.dumps(carts)  # 将字典转换为二进制数据
-            import base64
+
             data_encode = base64.b64encode(data_bytes)  # 将二进制数据进行编码
             response = JsonResponse({'code': 0, 'errmsg': 'ok'})
             response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
