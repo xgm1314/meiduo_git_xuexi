@@ -40,7 +40,7 @@ class CartView(View):
         # print(user)
         # 验证数据
         try:
-            sku = SKU.objects.get(id=sku_id)  # 查询数据库是否有该商品
+            sku = SKU.objects.get(id=sku_id, is_launched=True)  # 查询数据库是否有该商品
         except SKU.DoesNotExist:
             return JsonResponse({'code': 400, 'errmsg': '该商品不存在'})
         try:
@@ -125,3 +125,62 @@ class CartView(View):
                 })
 
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': carts})
+
+    def put(self, request):
+        """ 购物车的修改 """
+        user = request.user
+        body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
+        sku_id = int(body_dict.get('sku_id'))
+        count = body_dict.get('count')
+        selected = body_dict.get('selected')
+        try:
+            sku = SKU.objects.get(id=sku_id, is_launched=True)
+        except SKU.DoesNotExist:
+            return JsonResponse({'code': 400, 'errmsg': '该商品不存在'})
+        try:
+            count = int(count)
+        except Exception:
+            count = 1
+        if user.is_authenticated:  # 判断用户是否登录
+            redis_cli = get_redis_connection('carts')  # 连接redis库
+            redis_cli.hset('carts_%s' % user.id, sku_id, count)  # 更改数量
+            if selected is None:  # 判断是否更改已选
+                redis_cli.sadd('selected_%s' % user.id, sku_id)
+            else:
+                redis_cli.srem('selected_%s' % user.id, sku_id)
+
+            sku_id = redis_cli.hgetall('carts_%s' % user.id)  # 读取redis库的哈希值
+            # print(sku_id)
+            selected_id = redis_cli.smembers('selected_%s' % user.id)  # 读取redis库中的集合值
+            carts = {}
+            for sku, count in sku_id.items():  # 遍历redis库中的哈希k,v值
+                # print(int(sku))
+                skus = SKU.objects.filter(id=int(sku))
+                for sku_ in skus:
+                    carts[int(sku)] = {  # 需要将字符串的值转换为整数值
+                        'id': sku_.id,
+                        'name': sku_.name,
+                        'price': sku_.price,
+                        'default_image': sku_.default_image.url,
+                        'count': int(count),
+                        'selected_id': sku in selected_id  # 遍历集合，看是否选中
+                    }
+            return JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+        else:
+            cookie_carts = request.COOKIES.get('carts')  # 获取carts的cookie信息
+            if selected is None:
+                selected = True
+            if cookie_carts:
+                carts = pickle.loads(base64.b64decode(cookie_carts))  # 对carts的字典进行解码
+                carts[sku_id]['count'] = count  # 更改数量
+                carts[sku_id]['selected'] = selected  # 更改已选
+                carts[sku_id] = {
+                    'count': count,
+                    'selected': selected
+                }
+                data_bytes = pickle.dumps(carts)  # 将字典转换为二进制数据
+
+                data_encode = base64.b64encode(data_bytes)  # 将二进制数据进行编码
+                response = JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+                response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
+                return response
