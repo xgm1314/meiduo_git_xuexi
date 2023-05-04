@@ -246,3 +246,68 @@ class CartView(View):
             response = JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
             response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
             return response
+
+
+class CartsSelect(View):
+    """ 全选 """
+
+    def put(self, request):
+        """ 全选购物车 """
+        """
+        {
+            "selected":"True"
+        }
+        """
+        user = request.user
+        body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
+        selected = body_dict.get('selected')
+        if selected is None:
+            return JsonResponse({'code': 400, 'errmsg': '参数缺失'})
+        if user.is_authenticated:
+            redis_cli = get_redis_connection('carts')
+            carts_list = redis_cli.hgetall('carts_%s' % user.id)
+            carts_key_list = carts_list.keys()
+            for key in carts_key_list:
+                if selected == "True":
+                    redis_cli.sadd('selected_%s' % user.id, key)
+                elif selected == "False":
+                    redis_cli.srem('selected_%s' % user.id, key)
+
+            redis_cli = get_redis_connection('carts')  # 连接redis库
+            sku_id = redis_cli.hgetall('carts_%s' % user.id)  # 读取redis库的哈希值
+            # print(sku_id)
+            selected_id = redis_cli.smembers('selected_%s' % user.id)  # 读取redis库中的集合值
+
+            carts = {}  # 定义空字典
+
+            for sku, count in sku_id.items():  # 遍历redis库中的哈希k,v值
+                # print(int(sku))
+                skus = SKU.objects.filter(id=int(sku))
+                for sku_ in skus:
+                    carts[int(sku)] = {  # 需要将字符串的值转换为整数值
+                        'id': sku_.id,
+                        'name': sku_.name,
+                        'price': sku_.price,
+                        'default_image': sku_.default_image.url,
+                        'count': int(count),
+                        'selected_id': sku in selected_id  # 遍历集合，看是否选中
+                    }
+
+            return JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+
+        cookie_carts = request.COOKIES.get('carts')  # 获取carts的cookie信息
+        if cookie_carts:
+            carts = pickle.loads(base64.b64decode(cookie_carts))  # 对carts的字典进行解码
+            for k, v in carts.items():
+                if selected == 'True':
+                    v['selected'] = True
+                elif selected == 'False':
+                    v['selected'] = False
+
+            data_bytes = pickle.dumps(carts)  # 将字典转换为二进制数据
+
+            data_encode = base64.b64encode(data_bytes)  # 将二进制数据进行编码
+            response = JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+            response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
+            return response
+        return JsonResponse({'code': 400, 'errmsg': '数据不存在'})
