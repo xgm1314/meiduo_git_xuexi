@@ -103,25 +103,25 @@ class CartView(View):
                     }
 
         else:
-            cookie_carts = request.COOKIES.get('carts')
+            cookie_carts = request.COOKIES.get('carts')  # 查询cookies是否存在
             if cookie_carts:
-                carts = pickle.loads(base64.b64decode(cookie_carts))
-                print(carts)
+                carts = pickle.loads(base64.b64decode(cookie_carts))  # 存在解码
+                # print(carts)
                 # print(type(carts))
             else:
-                carts = {}
+                carts = {}  # 不存在新建字典
 
-            sku_id = carts.keys()
+            sku_id = carts.keys()  # 获取字典中的key值
             # print(sku_id)
             # print(type(sku_id))
-            skus = SKU.objects.filter(id__in=sku_id)
+            skus = SKU.objects.filter(id__in=sku_id)  # 判断数据库中是否有该商品
             # print(skus)
             # print(type(skus))
             sku_list = []
             for sku_ in skus:
                 sku_list.append({
                     'count': carts[sku_.id]['count'],
-                    'selected':  carts[sku_.id]['selected']
+                    'selected': carts[sku_.id]['selected']
                 })
 
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': carts})
