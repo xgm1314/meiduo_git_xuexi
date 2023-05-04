@@ -208,11 +208,12 @@ class CartView(View):
         except SKU.DoesNotExist:
             return JsonResponse({'code': 400, 'errmsg': '商品不存在'})
         if user.is_authenticated:
-            redis_cli = get_redis_connection('carts')
+            redis_cli = get_redis_connection('carts')  # 连接redis库
             redis_cli.hdel('carts_%s' % user.id, sku_id)
             # print('carts_%s' % user.id, sku_id)
             redis_cli.srem('selected_%s' % user.id, sku_id)
 
+            # 数据展示
             sku_id = redis_cli.hgetall('carts_%s' % user.id)  # 读取redis库的哈希值
             # print(sku_id)
             selected_id = redis_cli.smembers('selected_%s' % user.id)  # 读取redis库中的集合值
