@@ -94,6 +94,12 @@ class RegisterView(View):
 
 class LoginView(View):
     """ 用户登录 """
+    """
+    {
+    "username":"hzfyq09",
+    "password":1234567890
+    }
+    """
 
     def post(self, request):
         # 接受数据

@@ -29,6 +29,13 @@ from apps.goods.models import SKU
 
 class CartView(View):
     """ 购物车 """
+    """
+    {
+        "sku_id":5,
+        "count":100,
+        "selected":false
+    }
+    """
 
     def post(self, request):
         """ 新增购物车 """
@@ -184,3 +191,57 @@ class CartView(View):
                 response = JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
                 response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
                 return response
+
+    def delete(self, request):
+        """ 购物车商品删除 """
+        """
+        {
+            "sku_id": 5
+        }
+        redis库的内容删除不了，可以进行清楚redis缓存
+        """
+        user = request.user
+        body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
+        sku_id = body_dict.get('sku_id')
+        try:
+            sku = SKU.objects.get(id=sku_id)  # 查询商品是否存在
+        except SKU.DoesNotExist:
+            return JsonResponse({'code': 400, 'errmsg': '商品不存在'})
+        if user.is_authenticated:
+            redis_cli = get_redis_connection('carts')
+            redis_cli.hdel('carts_%s' % user.id, sku_id)
+            # print('carts_%s' % user.id, sku_id)
+            redis_cli.srem('selected_%s' % user.id, sku_id)
+
+            sku_id = redis_cli.hgetall('carts_%s' % user.id)  # 读取redis库的哈希值
+            # print(sku_id)
+            selected_id = redis_cli.smembers('selected_%s' % user.id)  # 读取redis库中的集合值
+            carts = {}
+            for sku, count in sku_id.items():  # 遍历redis库中的哈希k,v值
+                # print(int(sku))
+                skus = SKU.objects.filter(id=int(sku))
+                for sku_ in skus:
+                    carts[int(sku)] = {  # 需要将字符串的值转换为整数值
+                        'id': sku_.id,
+                        'name': sku_.name,
+                        'price': sku_.price,
+                        'default_image': sku_.default_image.url,
+                        'count': int(count),
+                        'selected_id': sku in selected_id  # 遍历集合，看是否选中
+                    }
+
+            return JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+        cookie_carts = request.COOKIES.get('carts')  # 获取carts的cookie信息
+        if cookie_carts:
+            carts = pickle.loads(base64.b64decode(cookie_carts))  # 对carts的字典进行解码
+            try:
+                del carts[sku_id]
+            except Exception:
+                return JsonResponse({'code': 400, 'errmsg': '商品不存在'})
+
+            data_bytes = pickle.dumps(carts)  # 将字典转换为二进制数据
+
+            data_encode = base64.b64encode(data_bytes)  # 将二进制数据进行编码
+            response = JsonResponse({'code': 0, 'errmsg': 'ok', 'carts': carts})
+            response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
+            return response
