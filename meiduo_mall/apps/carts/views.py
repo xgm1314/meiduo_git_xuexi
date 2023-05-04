@@ -33,7 +33,7 @@ class CartView(View):
     def post(self, request):
         """ 新增购物车 """
         body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
-        sku_id = body_dict.get('sku_id')
+        sku_id = int(body_dict.get('sku_id'))
         count = body_dict.get('count')
         selected = body_dict.get('selected')
         user = request.user
@@ -77,3 +77,51 @@ class CartView(View):
             response = JsonResponse({'code': 0, 'errmsg': 'ok'})
             response.set_cookie('carts', data_encode.decode(), 3600 * 24 * 7)
             return response
+
+    def get(self, request):
+        """ 购物车的展示 """
+        user = request.user
+        if user.is_authenticated:  # 判断用户是否登录
+            redis_cli = get_redis_connection('carts')  # 连接redis库
+            sku_id = redis_cli.hgetall('carts_%s' % user.id)  # 读取redis库的哈希值
+            # print(sku_id)
+            selected_id = redis_cli.smembers('selected_%s' % user.id)  # 读取redis库中的集合值
+
+            carts = {}  # 定义空字典
+
+            for sku, count in sku_id.items():  # 遍历redis库中的哈希k,v值
+                # print(int(sku))
+                skus = SKU.objects.filter(id=int(sku))
+                for sku_ in skus:
+                    carts[int(sku)] = {  # 需要将字符串的值转换为整数值
+                        'id': sku_.id,
+                        'name': sku_.name,
+                        'price': sku_.price,
+                        'default_image': sku_.default_image.url,
+                        'count': int(count),
+                        'selected_id': sku in selected_id  # 遍历集合，看是否选中
+                    }
+
+        else:
+            cookie_carts = request.COOKIES.get('carts')
+            if cookie_carts:
+                carts = pickle.loads(base64.b64decode(cookie_carts))
+                print(carts)
+                # print(type(carts))
+            else:
+                carts = {}
+
+            sku_id = carts.keys()
+            # print(sku_id)
+            # print(type(sku_id))
+            skus = SKU.objects.filter(id__in=sku_id)
+            # print(skus)
+            # print(type(skus))
+            sku_list = []
+            for sku_ in skus:
+                sku_list.append({
+                    'count': carts[sku_.id]['count'],
+                    'selected':  carts[sku_.id]['selected']
+                })
+
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': carts})
