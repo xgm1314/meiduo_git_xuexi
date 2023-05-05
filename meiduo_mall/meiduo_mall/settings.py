@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'haystack',  # 注册haystack全文搜索配置
     'django_crontab',
 
-    'apps.carts'
+    'apps.carts',
+    'apps.orders',
 
 ]
 
