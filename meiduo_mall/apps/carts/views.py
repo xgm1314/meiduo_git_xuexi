@@ -129,7 +129,7 @@ class CartView(View):
             for sku_ in sku_id:
                 # print(sku_)
                 _sku = SKU.objects.get(id=int(sku_))
-                print(_sku)
+                # print(_sku)
                 sku_list.append({
                     'id': _sku.id,
                     'name': _sku.name,

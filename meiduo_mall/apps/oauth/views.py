@@ -92,7 +92,12 @@ class OauthQQView(View):
         login(request, user)  # 设置session
         response = JsonResponse({'code': 0, 'errmsg': 'ok'})
         response.set_cookie('username', user.username)  # 设置cookie信息
-        return response  # 返回数据
+
+        # 未测试
+        from apps.carts.utils import merge_cart_cookie_redis
+        carts = merge_cart_cookie_redis(request=request, user=user, response=response)
+
+        return carts  # 返回数据
 
 
 """

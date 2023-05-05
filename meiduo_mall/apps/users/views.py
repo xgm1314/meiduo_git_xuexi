@@ -136,7 +136,11 @@ class LoginView(View):
         # 利用cookie登录信息
         response = JsonResponse({'code': 0, 'errmsg': 'ok'})
         response.set_cookie('username', username)
-        return response
+
+        from apps.carts.utils import merge_cart_cookie_redis
+        carts = merge_cart_cookie_redis(request=request, user=user, response=response)
+
+        return carts
 
 
 class LogoutView(View):
