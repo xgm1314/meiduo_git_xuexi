@@ -108,6 +108,7 @@ class CartView(View):
                         'count': int(count),
                         'selected_id': sku in selected_id  # 遍历集合，看是否选中
                     }
+            return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': carts})
 
         else:
             cookie_carts = request.COOKIES.get('carts')  # 查询cookies是否存在
@@ -121,17 +122,24 @@ class CartView(View):
             sku_id = carts.keys()  # 获取字典中的key值
             # print(sku_id)
             # print(type(sku_id))
-            skus = SKU.objects.filter(id__in=sku_id)  # 判断数据库中是否有该商品
+            # skus = SKU.objects.filter(id__in=sku_id)  # 判断数据库中是否有该商品
             # print(skus)
             # print(type(skus))
             sku_list = []
-            for sku_ in skus:
+            for sku_ in sku_id:
+                # print(sku_)
+                _sku = SKU.objects.get(id=int(sku_))
+                print(_sku)
                 sku_list.append({
-                    'count': carts[sku_.id]['count'],
-                    'selected': carts[sku_.id]['selected']
+                    'id': _sku.id,
+                    'name': _sku.name,
+                    'price': _sku.price,
+                    'default_image': _sku.default_image.url,
+                    'count': carts[sku_]['count'],
+                    'selected': carts[sku_]['selected']
                 })
 
-        return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': carts})
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'sku_list': sku_list})
 
     def put(self, request):
         """ 购物车的修改 """
