@@ -36,6 +36,15 @@ class UserMobileCountView(View):
 
 class RegisterView(View):
     """ 用户注册 """
+    """
+    {
+    "username":"hzfyq01",
+    "password":"1234567890",
+    "password2":"1234567890",
+    "mobile":"13100000000",
+    "allow":"True"
+    }
+    """
 
     def post(self, request):
         # 接受收据JSON
@@ -250,14 +259,16 @@ class EmailVerifyView(View):
 
 class AddressCreateView(LoginRequiredJSONMixin, View):
     """ 新增地址 """
-    """{
+    """
+    {
         "receiver":"fyq",
         "province":"370000",
         "city":"371700",
         "district":"371721",
         "place":"cx",
         "mobile":"13578978945"
-    }"""
+    }
+    """
 
     def post(self, request):
         body_dict = json.loads(request.body.decode())  # 获取前端传入的数据
