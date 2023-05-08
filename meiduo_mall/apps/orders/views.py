@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -9,6 +11,7 @@ from utils.views import LoginRequiredJSONMixin
 
 from apps.users.models import Address
 from apps.goods.models import SKU
+from apps.orders.models import OrderInfo
 
 
 class OrderSettlementView(LoginRequiredJSONMixin, View):
@@ -63,3 +66,59 @@ class OrderSettlementView(LoginRequiredJSONMixin, View):
             'freight': freight  # 运费
         }
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'context': context})
+
+
+class OrderCommitView(LoginRequiredJSONMixin, View):
+    """ 提交订单 """
+    """
+    {
+        "address":2,
+        "pay_method":1
+    }
+    """
+
+    def post(self, request):
+        user = request.user  # 获取前端传入的数据
+        body_dict = json.loads(request.body.decode())
+        address = body_dict.get('address')
+        pay_method = body_dict.get('pay_method')
+
+        # 验证传入的数据
+        if not all([address, pay_method]):
+            return JsonResponse({'code': 400, 'errmsg': '参数不全'})
+        try:
+            address_id = Address.objects.get(id=address)  # 查找表中是否有这个地址的对象
+        except Address.DoesNotExist:
+            return JsonResponse({'code': 400, 'errmsg': '用户地址不存在'})
+        if pay_method not in (
+                OrderInfo.PAY_METHODS_ENUM['CASH'],
+                OrderInfo.PAY_METHODS_ENUM['ALIPAY']):  # 等同于if pay_method not in(1,2)
+            return JsonResponse({'code': 400, 'errmsg': '支付方式不正确'})
+        from django.utils import timezone
+        from datetime import datetime
+        # timezone.now()  时间格式(获取当前时间)
+        # datetime.strftime()=timezone.localtime().strftime('%Y%m%d%H%M%S')
+        order_id = timezone.now().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
+        # order_id = datetime.now().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
+        if pay_method == OrderInfo.PAY_METHODS_ENUM['CASH']:
+            status = OrderInfo.ORDER_STATUS_ENUM['UNSEND']
+        else:
+            status = OrderInfo.ORDER_STATUS_ENUM['UNPAID']
+        total_count = 0  # 商品总数量
+        from decimal import Decimal
+        total_amount = Decimal('0')  # 商品总金额
+        freight = Decimal('10.00')  # 运费
+
+        OrderInfo.objects.create(
+            order_id=order_id,
+            user=user,
+            # address=address,
+            address=address_id,  # 测试用
+            total_count=total_count,
+            total_amount=total_amount,
+            freight=freight,
+            pay_method=pay_method,
+            status=status
+        )
+
+        return JsonResponse({'code': 0, 'errmsg': 'ok'})
