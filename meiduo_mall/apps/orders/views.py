@@ -98,7 +98,7 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
         from datetime import datetime
         # timezone.now()  时间格式(获取当前时间)
         # datetime.strftime()=timezone.localtime().strftime('%Y%m%d%H%M%S')
-        order_id = timezone.now().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
+        order_id = timezone.now().strftime('%Y%m%d%H%M%S%f') + '%09d' % user.id  # 生成订单编号
         # order_id = datetime.now().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
         if pay_method == OrderInfo.PAY_METHODS_ENUM['CASH']:
             status = OrderInfo.ORDER_STATUS_ENUM['UNSEND']
@@ -116,8 +116,7 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
             orderinfo = OrderInfo.objects.create(
                 order_id=order_id,
                 user=user,
-                # address=address,
-                address=address_id,  # 测试用
+                address=address_id,
                 total_count=total_count,
                 total_amount=total_amount,
                 freight=freight,
@@ -145,9 +144,26 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
                     transaction.savepoint_rollback(point)  # 事务回滚点
 
                     return JsonResponse({'code': 400, 'errmsg': '商品数量不足'})
-                sku.stock = sku.stock - count  # 库存减少
-                sku.sales = sku.sales + count  # 售量增加
-                sku.save()  # 保存
+
+                from time import sleep
+                sleep(5)
+
+                old_stock = sku.stock  # 查询数据库的库存数据
+
+                # sku.stock = sku.stock - count  # 库存减少
+                # sku.sales = sku.sales + count  # 售量增加
+                # sku.save()  # 保存
+
+                new_stock = sku.stock - count  # 更新的库存数量
+                new_sales = sku.sales + count  # 更新的售量
+
+                # 如果查询的库存数量等于最初的数量，则更新，否则不更新
+                result = SKU.objects.filter(id=sku_id, stock=old_stock).update(stock=new_stock, sales=new_sales)
+                # print(result)
+                if result == 0:  # 1:表示为真，0:为假
+                    transaction.savepoint_rollback(point)  # 事务回滚点
+                    return JsonResponse({'code': 400, 'errmsg': '下单失败~~~~~~~~~~~~~~~~~~~~'})
+
                 orderinfo.total_count = orderinfo.total_count + count  # 商品总数量
                 orderinfo.total_amount = orderinfo.total_amount + (sku.price * count) + freight  # 商品总价格
                 OrderGoods.objects.create(
@@ -161,3 +177,64 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
             transaction.savepoint_commit(point)  # 事务提交点
 
         return JsonResponse({'code': 0, 'errmsg': 'ok', 'order_id': order_id})
+
+
+"""
+解决并发的超卖问题：
+① 队列
+② 锁
+    悲观锁： 当查询某条记录时，即让数据库为该记录加锁，锁住记录后别人无法操作
+
+            悲观锁类似于我们在多线程资源竞争时添加的互斥锁，容易出现死锁现象
+
+    举例：
+
+    甲   1,3,5,7
+
+    乙   2,4,7,5
+
+
+    乐观锁:    乐观锁并不是真的锁。
+            在更新的时候判断此时的库存是否是之前查询出的库存，
+            如果相同，表示没人修改，可以更新库存，否则表示别人抢过资源，不再执行库存更新。
+
+
+
+    举例：
+                桌子上有10个肉包子。  9    8 
+
+                现在有5个人。 这5个人，每跑1km。只有第一名才有资格吃一个肉包子。 
+
+                5
+
+                4
+
+                3 
+
+    步骤：
+            1. 先记录某一个数据  
+            2. 我更新的时候，再比对一下这个记录对不对  
+
+
+MySQL数据库事务隔离级别主要有四种：
+
+    Serializable：串行化，一个事务一个事务的执行。  用的并不多
+
+    Repeatable read：可重复读，无论其他事务是否修改并提交了数据，在这个事务中看到的数据值始终不受其他事务影响。
+
+v    Read committed：读取已提交，其他事务提交了对数据的修改后，本事务就能读取到修改后的数据值。
+
+    Read uncommitted：读取未提交，其他事务只要修改了数据，即使未提交，本事务也能看到修改后的数据值。
+
+
+    举例：     5,7 库存 都是  8
+
+    甲   5,   7        5
+
+    乙  7,    5         5
+
+
+MySQL数据库默认使用可重复读（ Repeatable read）
+
+
+"""

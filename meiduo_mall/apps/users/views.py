@@ -105,7 +105,7 @@ class LoginView(View):
     """ 用户登录 """
     """
     {
-    "username":"hzfyq09",
+    "username":"hzfyq02",
     "password":1234567890
     }
     """

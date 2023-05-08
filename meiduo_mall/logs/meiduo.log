@@ -9639,3 +9639,732 @@ INFO 2023-05-06 13:35:20,796 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\
 INFO 2023-05-06 13:35:22,177 autoreload 677 Watching for file changes with StatReloader
 INFO 2023-05-06 13:36:25,656 basehttp 187 "POST /addresses/create/ HTTP/1.1" 200 242
 INFO 2023-05-06 13:36:52,706 basehttp 187 "POST /addresses/create/ HTTP/1.1" 200 246
+INFO 2023-05-06 15:34:27,568 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:34:29,098 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:34:57,941 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:34:59,323 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:36:17,242 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:36:18,712 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:36:57,164 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:36:58,614 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:37:39,503 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:37:40,902 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:41:03,986 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:41:05,428 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:41:12,497 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:41:13,941 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:42:54,790 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:42:56,131 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:43:09,799 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:43:11,334 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:43:18,508 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:43:19,939 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:43:25,987 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:43:27,448 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:44:30,050 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:44:31,443 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:46:01,144 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:46:02,504 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:46:25,892 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:46:27,218 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:47:34,070 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:47:35,433 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:48:10,784 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:48:12,180 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:48:15,424 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:48:16,827 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:48:23,918 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:48:25,274 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:49:03,944 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:49:05,400 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:49:09,208 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:49:10,590 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:49:37,398 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:49:38,847 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:49:43,780 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:49:45,118 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:49:52,817 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:49:54,185 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:50:02,969 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:50:04,343 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:50:09,837 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:50:11,261 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:50:21,147 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:50:22,491 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:50:51,182 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:50:52,713 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:50:56,481 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:50:57,860 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:51:06,629 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:51:08,074 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:51:24,554 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:51:25,907 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:51:53,502 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:51:54,849 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:52:23,476 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:52:24,847 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:55:07,008 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:55:08,389 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:55:51,287 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:55:52,646 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:56:41,258 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:56:42,627 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:56:45,485 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:56:46,837 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:57:08,075 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:57:09,438 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:57:41,550 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:57:42,979 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:58:04,958 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:58:06,384 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:58:21,792 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:58:23,177 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:58:40,051 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:58:41,638 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 15:59:15,987 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 15:59:17,388 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:01:32,951 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:01:34,360 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:02:27,886 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:03:22,733 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 69
+ERROR 2023-05-06 16:04:56,017 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 76, in post
+    body_dict = json.loads(request.body.decode())
+  File "c:\program files\python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "c:\program files\python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\program files\python39\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 3 column 9 (char 32)
+ERROR 2023-05-06 16:04:56,026 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 109585
+ERROR 2023-05-06 16:05:24,369 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 95, in post
+    order_id = timezone.localtime().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+ERROR 2023-05-06 16:05:24,375 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 102687
+INFO 2023-05-06 16:08:43,972 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:08:45,512 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:12:23,584 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:12:25,050 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:14:01,923 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:14:03,338 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:14:12,671 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:15:24,733 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 105, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "2": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-06 16:15:24,744 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118357
+INFO 2023-05-06 16:16:55,521 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:16:56,964 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:17:02,793 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:17:56,488 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 105, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "2": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-06 16:17:56,499 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118357
+INFO 2023-05-06 16:19:08,567 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:19:09,971 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:20:21,431 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:20:22,792 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:20:30,257 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:20:50,754 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 95, in post
+    order_id = timezone.localtime().strftime('%Y%m%d%H%M%S') + '%09d' % user.id  # 生成订单编号
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+ERROR 2023-05-06 16:20:50,765 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 102774
+INFO 2023-05-06 16:21:03,228 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:21:04,677 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:21:09,734 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:23:24,975 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 106, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "2": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-06 16:23:24,987 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118289
+ERROR 2023-05-06 16:27:45,853 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 106, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "'2'": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-06 16:27:45,854 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118411
+ERROR 2023-05-06 16:29:10,062 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 106, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "2": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-06 16:29:10,064 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118289
+INFO 2023-05-06 16:32:16,593 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:34:47,463 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:34:56,668 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view apps.orders.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2023-05-06 16:34:56,669 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 84329
+INFO 2023-05-06 16:36:28,335 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:36:29,780 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:40:13,869 basehttp 187 "GET /addresses/ HTTP/1.1" 200 452
+ERROR 2023-05-06 16:41:24,286 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\__init__.py", line 2018, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'dict'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 84, in post
+    address_id = Address.objects.get(id=address)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 636, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\sql\query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\sql\query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got {'id': 1, 'title': 'fyq', 'receiver': 'fyq', 'province': '山东省', 'city': '菏泽市', 'district': '曹县', 'place': 'cx', 'mobile': '13578978945', 'tel': None, 'email': ''}.
+ERROR 2023-05-06 16:41:24,295 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 169838
+INFO 2023-05-06 16:42:03,761 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:42:14,285 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 84, in post
+    address_id = Address.objects.get(id=address.id)
+AttributeError: 'dict' object has no attribute 'id'
+ERROR 2023-05-06 16:42:14,295 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 98963
+INFO 2023-05-06 16:42:31,591 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:42:45,211 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 84, in post
+    address_id = Address.objects.get(id=address[id])
+KeyError: <built-in function id>
+ERROR 2023-05-06 16:42:45,220 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 98809
+INFO 2023-05-06 16:43:15,733 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-06 16:43:44,077 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-06 16:44:13,849 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view apps.orders.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2023-05-06 16:44:13,856 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 84329
+INFO 2023-05-06 16:45:15,960 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-06 16:45:17,397 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:54:33,038 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-08 08:54:35,134 log 241 Internal Server Error: /login
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2023-05-08 08:54:35,135 basehttp 187 "POST /login HTTP/1.1" 500 88424
+ERROR 2023-05-08 08:54:37,523 log 241 Internal Server Error: /login
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2023-05-08 08:54:37,525 basehttp 187 "POST /login HTTP/1.1" 500 88424
+ERROR 2023-05-08 08:54:57,756 log 241 Internal Server Error: /login
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2023-05-08 08:54:57,757 basehttp 187 "POST /login HTTP/1.1" 500 88424
+INFO 2023-05-08 08:55:23,713 basehttp 187 "POST /login/ HTTP/1.1" 200 27
+INFO 2023-05-08 08:56:22,062 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:56:23,517 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-08 08:56:49,321 log 241 Internal Server Error: /orders/commit/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py", line 111, in post
+    OrderInfo.objects.create(
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\fields\related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "2": "OrderInfo.address" must be a "Address" instance.
+ERROR 2023-05-08 08:56:49,326 basehttp 187 "POST /orders/commit/ HTTP/1.1" 500 118544
+INFO 2023-05-08 08:56:50,712 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:56:52,257 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:57:01,523 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:57:28,334 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 27
+INFO 2023-05-08 08:58:01,015 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:58:02,691 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:58:44,480 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:58:45,974 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:58:49,127 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:58:50,527 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:58:55,421 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:58:56,757 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 08:59:03,279 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 08:59:04,632 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:00:27,019 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:00:28,510 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:01:15,908 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 27
+INFO 2023-05-08 09:03:07,857 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:03:09,245 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:22:28,928 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:22:30,503 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:22:32,138 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:22:33,527 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:22:36,220 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:22:37,626 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:23:30,155 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:23:31,611 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:25:34,787 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:25:36,202 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:26:44,247 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:26:45,563 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:26:58,084 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:26:59,415 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:27:19,562 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:27:20,893 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:27:34,079 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:27:35,384 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:27:48,488 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:27:49,797 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:27:54,165 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:27:55,491 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:28:02,550 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:28:03,883 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:28:24,721 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:28:26,025 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:29:18,555 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:29:19,948 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:29:40,065 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:29:41,434 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:30:43,922 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:30:45,263 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:32:55,125 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:32:56,461 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:34:12,231 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:34:13,687 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:35:36,095 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:35:37,488 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:36:02,937 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:36:04,284 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:36:47,282 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:36:48,716 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:37:26,225 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:37:27,636 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:37:52,777 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:37:54,156 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:37:59,538 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:38:00,963 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:39:10,121 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:39:11,494 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:40:41,559 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:40:43,062 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:40:59,437 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:41:00,782 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:41:09,552 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:41:10,952 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:41:32,949 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:41:34,341 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:42:06,085 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:42:07,493 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:43:27,766 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 09:43:29,176 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:44:39,724 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 66
+INFO 2023-05-08 09:48:01,716 basehttp 187 "GET /orders/settlement/ HTTP/1.1" 200 410
+INFO 2023-05-08 09:48:55,428 basehttp 187 "GET /carts/ HTTP/1.1" 200 43
+INFO 2023-05-08 09:49:21,415 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\carts\views.py changed, reloading.
+INFO 2023-05-08 09:49:23,058 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 09:49:32,353 basehttp 187 "GET /carts/ HTTP/1.1" 200 43
+INFO 2023-05-08 09:49:37,658 basehttp 187 "POST /carts/ HTTP/1.1" 200 27
+INFO 2023-05-08 09:49:54,341 basehttp 187 "POST /carts/ HTTP/1.1" 200 27
+INFO 2023-05-08 09:50:00,378 basehttp 187 "GET /carts/ HTTP/1.1" 200 532
+INFO 2023-05-08 09:56:32,141 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 66
+INFO 2023-05-08 10:01:00,865 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 10:01:59,178 basehttp 187 "GET /carts HTTP/1.1" 301 0
+INFO 2023-05-08 10:02:03,370 basehttp 187 "GET /carts/ HTTP/1.1" 200 532
+INFO 2023-05-08 10:03:19,857 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 66
+INFO 2023-05-08 10:05:09,442 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:05:10,862 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:05:20,541 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 66
+INFO 2023-05-08 10:06:07,161 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:06:08,713 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:07:50,513 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:07:53,732 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:07:55,099 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:08:04,057 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 66
+INFO 2023-05-08 10:08:05,334 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:08:06,820 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:37:37,167 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:37:38,633 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:37:41,304 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:37:42,660 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:37:44,334 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:37:45,736 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:38:04,777 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:38:06,150 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:38:36,072 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:38:37,390 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:38:48,789 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:38:50,168 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:05,924 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:07,302 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:08,939 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:10,299 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:17,365 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:18,722 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:24,769 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:26,150 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:28,285 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:29,685 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:40,540 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:41,891 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:52,913 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:54,407 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:39:56,580 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:39:57,972 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:15,576 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:17,034 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:31,259 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:32,637 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:37,073 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:38,483 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:40,172 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:41,575 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:46,933 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:48,398 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:40:56,009 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:40:57,458 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:41:16,091 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:41:17,535 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:41:58,181 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:41:59,675 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:42:07,440 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:42:08,918 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:42:22,101 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 10:42:23,515 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:50:29,538 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 10:51:35,621 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 10:52:47,764 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 11:09:40,945 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 11:09:42,363 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:15:59,251 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:16:00,961 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:45:40,905 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:45:42,643 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:45:57,692 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:45:59,260 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:47:00,939 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:47:02,562 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:47:15,078 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:47:16,749 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:47:50,692 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:47:52,295 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:47:58,075 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:47:59,703 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:48:03,218 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:48:04,863 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:51:45,421 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:52:22,764 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py changed, reloading.
+INFO 2023-05-08 12:52:24,357 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-08 12:52:30,220 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+apps.users.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py", line 133, in post
+    user = authenticate(username=username, password=password)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\backends.py", line 50, in authenticate
+    UserModel().set_password(password)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\base_user.py", line 100, in set_password
+    self.password = make_password(raw_password)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\contrib\auth\hashers.py", line 86, in make_password
+    raise TypeError(
+TypeError: Password must be a string or bytes, got int.
+ERROR 2023-05-08 12:52:30,225 basehttp 187 "POST /login/ HTTP/1.1" 500 132005
+INFO 2023-05-08 12:52:49,466 basehttp 187 "POST /login/ HTTP/1.1" 200 75
+INFO 2023-05-08 12:53:00,900 basehttp 187 "POST /login/ HTTP/1.1" 200 27
+ERROR 2023-05-08 12:54:12,045 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py", line 123, in post
+    if re.match(r'1[345789]\d{9}', username):
+  File "c:\program files\python39\lib\re.py", line 191, in match
+    return _compile(pattern, flags).match(string)
+TypeError: expected string or bytes-like object
+ERROR 2023-05-08 12:54:12,048 basehttp 187 "POST /login/ HTTP/1.1" 500 97482
+INFO 2023-05-08 12:54:17,707 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 12:54:56,473 autoreload 677 Watching for file changes with StatReloader
+ERROR 2023-05-08 12:55:09,364 log 241 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ml\python\py_ceshi\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\users\views.py", line 123, in post
+    if re.match(r'1[345789]\d{9}', username):
+  File "c:\program files\python39\lib\re.py", line 191, in match
+    return _compile(pattern, flags).match(string)
+TypeError: expected string or bytes-like object
+ERROR 2023-05-08 12:55:09,367 basehttp 187 "POST /login/ HTTP/1.1" 500 97482
+INFO 2023-05-08 12:57:10,066 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:57:11,787 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:57:15,734 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:57:17,410 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:57:20,327 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:57:21,931 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:57:26,508 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 12:57:28,314 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 12:57:50,166 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 12:57:50,167 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 63
+INFO 2023-05-08 12:58:17,265 basehttp 187 "GET /carts/ HTTP/1.1" 200 532
+INFO 2023-05-08 12:58:51,259 basehttp 187 "DELETE /carts/ HTTP/1.1" 200 265
+INFO 2023-05-08 12:59:15,523 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 72
+INFO 2023-05-08 12:59:17,435 basehttp 187 "POST /orders/commit/ HTTP/1.1" 200 71
+INFO 2023-05-08 13:01:44,590 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 13:01:46,227 autoreload 677 Watching for file changes with StatReloader
+INFO 2023-05-08 14:01:07,469 autoreload 266 C:\Users\lenovo\Desktop\redis_ceshi\meiduo_git_xuexi\meiduo_git_xuexi\meiduo_mall\apps\orders\views.py changed, reloading.
+INFO 2023-05-08 14:01:08,949 autoreload 677 Watching for file changes with StatReloader
