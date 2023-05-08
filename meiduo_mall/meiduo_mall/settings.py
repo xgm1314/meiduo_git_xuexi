@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     'apps.carts',
     'apps.orders',
+    'apps.pay',
 
 ]
 
@@ -370,7 +371,16 @@ CRONJOBS = [('*/1 * * * * ', 'apps.contents.crons.generic_meiduo_index', '>>' + 
 查看已有定时任务：python manage.py crontab show
 添加定时任务：python manage.py crontab add
 删除定时任务：python manage.py crontab remove
-"""
+
 CRONJOBS = [
     ('*/1 * * * * ', 'apps.contents.crons.generic_meiduo_index', '>>' + os.path.join(BASE_DIR, 'logs/crontab.log'))
 ]
+"""
+
+# 支付宝支付参数
+ALIPAY_APPID = '2016091600523030'
+ALIPAY_DEBUG = True
+ALIPAY_URL = 'https://openapi.alipaydev.com/gateway.do'
+ALIPAY_RETURN_URL = 'http://www.meiduo.site:8080/pay_success.html'
+APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'apps/pay/key/app_private_key.pem')
+ALIPAY_PUBLIC_KEY_PATH = os.path.join(BASE_DIR, 'apps/pay/key/alipay_public_key.pem')

@@ -139,40 +139,51 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
                 carts[int(sku_id)] = int(sku_id_counts[sku_id])
 
             for sku_id, count in carts.items():
-                sku = SKU.objects.get(id=sku_id)  # 查询商品
-                if sku.stock < count:
-                    transaction.savepoint_rollback(point)  # 事务回滚点
+                # while True:  # 循环下单
+                for i in range(10):  #
+                    sku = SKU.objects.get(id=sku_id)  # 查询商品
+                    if sku.stock < count:
+                        transaction.savepoint_rollback(point)  # 事务回滚点
 
-                    return JsonResponse({'code': 400, 'errmsg': '商品数量不足'})
+                        return JsonResponse({'code': 400, 'errmsg': '商品数量不足'})
 
-                from time import sleep
-                sleep(5)
+                    from time import sleep
+                    sleep(5)
 
-                old_stock = sku.stock  # 查询数据库的库存数据
+                    old_stock = sku.stock  # 查询数据库的库存数据
 
-                # sku.stock = sku.stock - count  # 库存减少
-                # sku.sales = sku.sales + count  # 售量增加
-                # sku.save()  # 保存
+                    # sku.stock = sku.stock - count  # 库存减少
+                    # sku.sales = sku.sales + count  # 售量增加
+                    # sku.save()  # 保存
 
-                new_stock = sku.stock - count  # 更新的库存数量
-                new_sales = sku.sales + count  # 更新的售量
+                    new_stock = sku.stock - count  # 更新的库存数量
+                    new_sales = sku.sales + count  # 更新的售量
 
-                # 如果查询的库存数量等于最初的数量，则更新，否则不更新
-                result = SKU.objects.filter(id=sku_id, stock=old_stock).update(stock=new_stock, sales=new_sales)
-                # print(result)
-                if result == 0:  # 1:表示为真，0:为假
-                    transaction.savepoint_rollback(point)  # 事务回滚点
-                    return JsonResponse({'code': 400, 'errmsg': '下单失败~~~~~~~~~~~~~~~~~~~~'})
+                    # 如果查询的库存数量等于最初的数量，则更新，否则不更新
+                    result = SKU.objects.filter(id=sku_id, stock=old_stock).update(stock=new_stock, sales=new_sales)
+                    # print(result)
+                    if result == 0:  # 1:表示为真，0:为假
+                        sleep(0.01)
+                        continue
+                        # transaction.savepoint_rollback(point)  # 事务回滚点
+                        # return JsonResponse({'code': 400, 'errmsg': '下单失败~~~~~~~~~~~~~~~~~~~~'})
 
-                orderinfo.total_count = orderinfo.total_count + count  # 商品总数量
-                orderinfo.total_amount = orderinfo.total_amount + (sku.price * count) + freight  # 商品总价格
-                OrderGoods.objects.create(
-                    order_id=order_id,
-                    sku=sku,
-                    count=count,
-                    price=sku.price
-                )
+                    orderinfo.total_count = orderinfo.total_count + count  # 商品总数量
+                    orderinfo.total_amount = orderinfo.total_amount + (sku.price * count) + freight  # 商品总价格
+                    OrderGoods.objects.create(
+                        order=orderinfo,
+                        sku=sku,
+                        count=count,
+                        price=sku.price
+                    )
+                    # return JsonResponse({'code': 400, 'errmsg': '下单失败~~~~~~~~~~~~~~~~~~~~'})
+                    break
             orderinfo.save()
+
+            # pipeline = redis_cli.pipeline()  # 清除redis库中已选的商品
+            # pipeline.hdel('carts_%s' % user.id, *sku_id_counts)
+            # pipeline.srem('selected_%s' % user.id, *selected_ids)
+            # pipeline.execute()
 
             transaction.savepoint_commit(point)  # 事务提交点
 
