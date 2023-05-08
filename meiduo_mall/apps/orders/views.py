@@ -11,7 +11,7 @@ from utils.views import LoginRequiredJSONMixin
 
 from apps.users.models import Address
 from apps.goods.models import SKU
-from apps.orders.models import OrderInfo
+from apps.orders.models import OrderInfo, OrderGoods
 
 
 class OrderSettlementView(LoginRequiredJSONMixin, View):
@@ -109,7 +109,7 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
         total_amount = Decimal('0')  # 商品总金额
         freight = Decimal('10.00')  # 运费
 
-        OrderInfo.objects.create(
+        orderinfo = OrderInfo.objects.create(
             order_id=order_id,
             user=user,
             # address=address,
@@ -121,4 +121,34 @@ class OrderCommitView(LoginRequiredJSONMixin, View):
             status=status
         )
 
-        return JsonResponse({'code': 0, 'errmsg': 'ok'})
+        redis_cli = get_redis_connection('carts')  # 连接redis库
+        pipeline = redis_cli.pipeline()  # 创建pipeline管道
+        pipeline.hgetall('carts_%s' % user.id)
+        pipeline.smembers('selected_%s' % user.id)
+        result = pipeline.execute()  # 接受管道，返回结果
+        # print(result)
+        sku_id_counts = result[0]  # 获取哈希结果
+        # print(sku_id_counts)
+        selected_ids = result[1]  # 获取集合结果
+
+        carts = {}  # 重新组织商品的勾选字典
+        for sku_id in selected_ids:
+            carts[int(sku_id)] = int(sku_id_counts[sku_id])
+
+        for sku_id, count in carts.items():
+            sku = SKU.objects.get(id=sku_id)  # 查询商品
+            if sku.stock < count:
+                return JsonResponse({'code': 400, 'errmsg': '商品数量不足'})
+            sku.stock = sku.stock - count  # 库存减少
+            sku.sales = sku.sales + count  # 售量增加
+            sku.save()  # 保存
+            orderinfo.total_count = orderinfo.total_count + count  # 商品总数量
+            orderinfo.total_amount = orderinfo.total_amount + (sku.price * count) + freight  # 商品总价格
+            OrderGoods.objects.create(
+                order_id=order_id,
+                sku=sku,
+                count=count,
+                price=sku.price
+            )
+        orderinfo.save()
+        return JsonResponse({'code': 0, 'errmsg': 'ok', 'order_id': order_id})
