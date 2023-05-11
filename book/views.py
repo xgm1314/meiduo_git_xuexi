@@ -1,3 +1,4 @@
+###################序列化###############################
 from django.shortcuts import render
 
 # Create your views here.
@@ -5,8 +6,6 @@ from django.views.generic import View
 from book.models import BookInfo
 from django.http import JsonResponse
 import json
-
-
 
 """
 通过REST来实现 对于书籍的 增删改查操作
@@ -16,14 +15,14 @@ import json
 修改一本书籍
 查询一本书籍
 查询所有书籍
-   
-###########列表视图#################################    
+
+###########列表视图#################################
 查询所有书籍
 GET             books/
     1.查询所有数据
     2.将查询结果集进行遍历,转换为字典列表
     3.返回响应
-    
+
 增加一本书籍
 POST            books/
     1.接收参数,获取参数
@@ -37,7 +36,7 @@ DELETE          books/id/
     1. 接收参数,查询数据
     2. 操作数据库(删除)
     3. 返回响应
-    
+
 修改一本书籍
 PUT             books/id/
     1.查询指定的数据
@@ -55,13 +54,13 @@ GET             books/id/
 
 
 ######################################################################
-###########列表视图#################################    
+###########列表视图#################################
 查询所有书籍
 GET             books/
     1.查询所有数据                                    查询数据库
     2.将查询结果集进行遍历,转换为字典列表                 序列化操作
     3.返回响应                                        返回响应
-    
+
 增加一本书籍
 POST            books/
     1.接收参数,获取参数                                 JSON/dict
@@ -75,9 +74,9 @@ DELETE          books/id/
     1. 接收参数,查询数据                              查询
     2. 操作数据库(删除)                              删除
     3. 返回响应
-    
+
 修改一本书籍
-PUT             books/id/   
+PUT             books/id/
     1.查询指定的数据                               对象
     2.接收参数,获取参数                         JSON/dict
     3.验证参数
@@ -100,6 +99,7 @@ class BookListView(View):
     """
     查询所有图书、增加图书
     """
+
     def get(self, request):
         """
         查询所有图书
@@ -114,6 +114,19 @@ class BookListView(View):
                 'pub_date': book.pub_date
             })
         return JsonResponse(book_list, safe=False)
+
+    """
+    def get(self,request):
+        books=BookInfo.objects.all()
+        book_list=[]
+        for book in books:
+            book_list.append({
+                'id':book.id,
+                'name':book.name,
+                'pub_date':book.pub_date
+            })
+        return JsonResponse(book_list,safe=False)
+    """
 
     def post(self, request):
         """
@@ -135,7 +148,28 @@ class BookListView(View):
             'id': book.id,
             'name': book.name,
             'pub_date': book.pub_date
-        },safe=False)
+        }, safe=False)
+
+
+"""
+    def post(self, request):
+        body_dict = json.loads(request.body.decode())
+        name = body_dict.get('name')
+        pub_date = body_dict.get('pub_date')
+        if not all([name, pub_date]):
+            return JsonResponse({},status=404)
+        book = BookInfo.objects.create(
+            name=name,
+            pub_date=pub_date
+        )
+        book.save()
+        return JsonResponse({
+            'id': book.id,
+            'name': book.name,
+            'pub_date': book.pub_date
+        }, safe=False)
+"""
+
 
 class BookDetailView(View):
     """
@@ -143,6 +177,7 @@ class BookDetailView(View):
     修改图书信息
     删除图书
     """
+
     def get(self, request, pk):
         """
         获取单个图书信息
@@ -151,13 +186,27 @@ class BookDetailView(View):
         try:
             book = BookInfo.objects.get(id=pk)
         except BookInfo.DoesNotExist:
-            return JsonResponse({},status=404)
+            return JsonResponse({}, status=404)
 
         return JsonResponse({
             'id': book.id,
             'name': book.name,
             'pub_date': book.pub_date
         })
+
+    """    
+    def get(self, request, pk):
+        try:
+            book = BookInfo.objects.get(id=pk)
+        except BookInfo.DoesNotExist:
+            return JsonResponse({}, status=404)
+        else:
+            return JsonResponse({
+                'id': book.id,
+                'name': book.name,
+                'pub_date': book.pub_date
+            })
+    """
 
     def put(self, request, pk):
         """
@@ -167,7 +216,7 @@ class BookDetailView(View):
         try:
             book = BookInfo.objects.get(id=pk)
         except BookInfo.DoesNotExist:
-            return JsonResponse({},status=404)
+            return JsonResponse({}, status=404)
 
         json_bytes = request.body
         json_str = json_bytes.decode()
@@ -185,6 +234,28 @@ class BookDetailView(View):
             'pub_date': book.pub_date
         })
 
+    """
+    def put(self, request, pk):
+        try:
+            book = BookInfo.objects.get(id=pk)
+        except BookInfo.DoesNotExist:
+            return JsonResponse({}, status=404)
+
+        body_dict = json.loads(request.body.decode())
+        name = body_dict.get('name')
+        pub_date = body_dict.get('pud_date')
+        if not all([name, pub_date]):
+            return JsonResponse({}, status=404)
+        book.name = name
+        book.pub_date = pub_date
+        book.save()
+        return JsonResponse({
+            'id': book.id,
+            'name': book.name,
+            'pub_date': book.pub_date
+        })
+    """
+
     def delete(self, request, pk):
         """
         删除图书
@@ -193,11 +264,22 @@ class BookDetailView(View):
         try:
             book = BookInfo.objects.get(id=pk)
         except BookInfo.DoesNotExist:
-            return JsonResponse({},status=404)
+            return JsonResponse({}, status=404)
 
         book.delete()
 
-        return JsonResponse({},status=204)
+        return JsonResponse({}, status=204)
+
+    """
+    def delete(self, request, pk):
+        try:
+            book = BookInfo.objects.get(id=pk)
+        except BookInfo.DoesNotExist:
+            return JsonResponse({}, status=404)
+        book.delete()
+        return JsonResponse({}, status=204)
+    """
+
 
 """
 我们的序列化器 目的
@@ -208,15 +290,14 @@ from book.serializers import BookInfoSerializer
 from book.models import BookInfo
 
 # 1. 模拟查询一个对象
-book=BookInfo.objects.get(id=1)
+book = BookInfo.objects.get(id=1)
 
 # BookInfoSerializer(instance=对象,data=字典)
 # 2.实例化序列化,将对象数据传递给序列化器
-serializer=BookInfoSerializer(instance=book)
+serializer = BookInfoSerializer(instance=book)
 
 # 3.获取序列化器将对象转换为字典的数据
 serializer.data
-
 
 ##########################################
 
@@ -224,23 +305,22 @@ from book.serializers import BookInfoSerializer
 from book.models import BookInfo
 
 # 1. 获取所有书籍
-books=BookInfo.objects.all()
+books = BookInfo.objects.all()
 # 2. 实例化序列化,将对象数据传递给序列化器
-serializer=BookInfoSerializer(instance=books,many=True)
+serializer = BookInfoSerializer(instance=books, many=True)  # 如果是多个值(查询结果集)many=True
 # serializer=BookInfoSerializer(books)   正确的写法
 # 3. 获取序列化(将对象转换为字典)的数据
 serializer.data
 
 """
 [
-OrderedDict([('id', 1), ('name', '射雕英雄传'), ('pub_date', '1980-05-01'), ('readcount', 12)]), 
-OrderedDict([('id', 2), ('name', '天龙八'),('pub_date', '1986-07-24'), ('readcount', 36)]), 
-OrderedDict([('id', 3), ('name', '笑傲江湖'), ('pub_date', '1995-12-24'), ('readcount', 20)]), 
+OrderedDict([('id', 1), ('name', '射雕英雄传'), ('pub_date', '1980-05-01'), ('readcount', 12)]),
+OrderedDict([('id', 2), ('name', '天龙八'),('pub_date', '1986-07-24'), ('readcount', 36)]),
+OrderedDict([('id', 3), ('name', '笑傲江湖'), ('pub_date', '1995-12-24'), ('readcount', 20)]),
 OrderedDict([('id', 4), ('name', '雪山飞狐'), ('pub_date', '1987-11-11'), ('readcount', 58)])
 ]
 
 """
-
 
 #########################外键的序列化器的定义 验证###########################################################################
 
@@ -248,20 +328,10 @@ from book.serializers import PeopleInfoSerializer
 from book.models import PeopleInfo
 
 # 1.  模拟查询对象
-person=PeopleInfo.objects.get(id=1)
+person = PeopleInfo.objects.get(id=1)
 
 # 2. 创建序列化器
-serializer=PeopleInfoSerializer(instance=person)
+serializer = PeopleInfoSerializer(instance=person)
 
 # 3. 获取序列化器中 将对象转换为字典的数据
 serializer.data
-
-
-
-
-
-
-
-
-
-

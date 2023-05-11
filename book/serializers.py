@@ -1,5 +1,4 @@
-
-###########################################################
+#####################序列化######################################
 """
 drf 框架 能够帮助我们实现  序列化和反序列化的功能  (对象和字典的相互转换)
 
@@ -11,6 +10,7 @@ BookInfo(对象)        ---序列化器类--->             字典
 
 序列化器类
     ① 将对象转换为字典
+    ② 将字典转换为对象  -- 反序列化
 
 
 序列化器类的定义
@@ -27,21 +27,21 @@ class 序列化器名字(serializers.Serializer):
 """
 from rest_framework import serializers
 
-class PeopleRelatedSerializer(serializers.Serializer):
 
-    id=serializers.IntegerField()
-    name=serializers.CharField()
-    password=serializers.CharField()
+class PeopleRelatedSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    password = serializers.CharField()
+
 
 class BookInfoSerializer(serializers.Serializer):
-
-    id =serializers.IntegerField()
-    name =serializers.CharField()
-    pub_date =serializers.DateField()
-    readcount =serializers.IntegerField()
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    pub_date = serializers.DateField()
+    readcount = serializers.IntegerField()
 
     #
-    people=PeopleRelatedSerializer(many=True)
+    people = PeopleRelatedSerializer(many=True)
     """
     {
      'id': 1, 'name': '射雕英雄传', 'pub_date': '1980-05-01', 'readcount': 12,
@@ -56,15 +56,17 @@ class BookInfoSerializer(serializers.Serializer):
 
     """
 
+
 ################定义人物模型对应的序列化器#####################
 from book.models import BookInfo
-class PeopleInfoSerializer(serializers.Serializer):
 
-    id=serializers.IntegerField()
-    name=serializers.CharField()
-    password=serializers.CharField()
-    description=serializers.CharField()
-    is_delete=serializers.BooleanField()
+
+class PeopleInfoSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+    password = serializers.CharField()
+    description = serializers.CharField()
+    is_delete = serializers.BooleanField()
 
     ###对外键进行学习
     # ①  如果我们定义的序列化器外键字段类型为 IntegerField
