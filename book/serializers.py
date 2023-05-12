@@ -35,13 +35,45 @@ class PeopleRelatedSerializer(serializers.Serializer):
 
 
 class BookInfoSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    name = serializers.CharField()
-    pub_date = serializers.DateField()
-    readcount = serializers.IntegerField()
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(write_only=True, max_length=10, min_length=5)  # 设置字段的最大长度和最小长度
+    pub_date = serializers.DateField(required=True)
+    readcount = serializers.IntegerField(required=True)
+    commentcount = serializers.IntegerField(required=True)
+
+    # 单个参数验证
+    def validate_readcount(self, value):
+        """ 判断数据类型是否满足(方法验证数据) """
+        if value < 0:
+            # raise Exception('阅读量不能为负数')
+            raise serializers.ValidationError('阅读量不能为负数~~~')  # 模拟系统抛出异常
+        return value
+
+    # 多个参数验证
+    def validate(self, attrs):  # attrs 就是传入的data字典
+        readcount = attrs.get('readcount')
+        commentcount = attrs.get('commentcount')
+        if readcount < commentcount:
+            raise serializers.ValidationError('评论量不能大于阅读量')
+        return attrs
+
+    def create(self, validated_data):  # validated_data 是传入的data字典数据
+        """ 验证数据没有问题，保存到数据库 """
+        return BookInfo.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        """ 验证数据没有问题，更新到数据库 """
+        # instance 序列化器创造时，传递的对象
+        # validated_data 序列化器创造时，验证没问题的数据
+        instance.name = validated_data.get('name', instance.name)
+        instance.pub_date = validated_data.get('pub_date', instance.pub_date)
+        instance.readcount = validated_data.get('readcount', instance.readcount)
+        instance.commentcount = validated_data.get('commentcount', instance.commentcount)
+        instance.save()  # 保存到数据库
+        return instance
 
     #
-    people = PeopleRelatedSerializer(many=True)
+    # people = PeopleRelatedSerializer(many=True)
     """
     {
      'id': 1, 'name': '射雕英雄传', 'pub_date': '1980-05-01', 'readcount': 12,
@@ -112,3 +144,101 @@ class PeopleInfoSerializer(serializers.Serializer):
 
 
 """
+
+
+class BoolInfoModelSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(max_length=10, min_length=5, required=True)  # 当自动生成的选项不满足时，可以重写
+
+    class Meta:
+        model = BookInfo  # ModelSerializer必须设置model
+        fields = '__all__'  # 设置自动生成的字段列表__all__ 表示所有字段
+        # fields=['id','name']#设置需要生成的字段
+        # exclude = ['id', 'name']  # 设置除了列表中的字段，其他字段都生成
+
+        # extra_kwargs = {  # 当自动生成的选项不满足时，重新设置选项
+        #     # '字段名':{'选项名':value,}
+        #     'name': {
+        #         'max_length': 40,
+        #         'min_length': 10
+        #     }
+        # }
+
+
+from book.models import PeopleInfo
+
+
+class PeopleInfoModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PeopleInfo
+        fields = ['id', 'name', 'book', 'password', 'is_delete', 'description']
+        extra_kwargs = {
+            'password': {
+                'write_only': True
+            },
+            'is_delete': {
+                'read_only': True
+            },
+        }
+
+
+class PeopleInfoModelSerializer1(serializers.ModelSerializer):
+    book_id = serializers.IntegerField(required=False)  # 在序列化嵌套时，因为book_id没有外键，所以需要先增加required=False
+
+    class Meta:
+        model = PeopleInfo
+        fields = ['id', 'name', 'book_id', 'password', 'is_delete', 'description']
+        extra_kwargs = {
+            'password': {
+                'write_only': True
+            },
+            'is_delete': {
+                'read_only': True
+            },
+        }
+
+
+class BoolInfoModelSerializer1(serializers.ModelSerializer):
+    """ 序列化器嵌套 """
+    people = PeopleInfoModelSerializer1(many=True)
+
+    class Meta:
+        model = BookInfo
+        fields = '__all__'
+
+    """
+    序列化器嵌套序列化器写入数据的时候.默认系统是不支持写入的
+    我们需要自己实现create方法 来实现数据的写入
+
+    validate:
+    data={
+        'name':'离离原上草',
+
+    }
+
+    people 
+    'people':[
+            {
+                'name': '靖妹妹111',
+                'password': '123456abc'
+            },
+            {
+                'name': '靖表哥222',
+                'password': '123456abc'
+            }
+        ]
+
+    写入数据的思想是:  因为 当前 书籍和人物的关系是 1对多  应该先写入 1的模型数据,再写入 多的模型数据
+
+    data.pop('people')  'name':'离离原上草',
+
+    people 再写入 people列表数据
+
+    """
+
+    def create(self, validated_data):
+        people = validated_data.pop('people')  # 把validated_data的嵌套数据分解开
+        # print(people)
+        book = BookInfo.objects.create(**validated_data)  # 写入书籍信息
+        for item in people:  # 对字典列表进行遍历
+            PeopleInfo.objects.create(book=book, **item)
+        return book

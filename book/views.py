@@ -335,3 +335,167 @@ serializer = PeopleInfoSerializer(instance=person)
 
 # 3. 获取序列化器中 将对象转换为字典的数据
 serializer.data
+
+######################反序列化##########################################
+
+"""
+序列化器验证数据的第一种形式:
+
+1.  我们定义的数据类型,可以帮助我们 在反序列化(字典转模型)的时候 验证传入的数据的类型
+    例如:
+        DateField 需要满足 YYYY-MM-DD
+        IntegerField 满足整形类型
+
+2.  通过字段的选项来验证数据
+    例如: 
+        CharField(max_length=10,min_length=5)
+        IntegerField(max_value=10,min_value=1)
+        required=True 默认是True
+
+        read_only: 只用于序列化使用. 反序列化的时候 忽略该字段
+        write_only: 只是用于反序列化使用. 序列化的时候 忽略该字段
+"""
+
+from book.serializers import BookInfoSerializer
+
+# 模拟接受字典数据
+data = {
+    # 'id': 5,
+    'name': 'python',
+    'pub_date': '2021-06-09',
+    'readcount': 666,
+    'commentcount': 10
+}
+# 创建序列化器
+# instance 用于序列化 对象转字典
+# data 用于反序列化 字典转对象
+serializer = BookInfoSerializer(data=data)
+# 验证数据 数据正确返回True，不正确返回False
+serializer.is_valid(raise_exception=True)
+# 保存到数据库
+serializer.save()
+
+##
+from book.serializers import BookInfoSerializer
+from book.models import BookInfo
+
+# 模拟对象数据
+book = BookInfo.objects.get(id=18)
+# 模拟接受字典数据
+data = {
+    # 'id': 5,
+    'name': 'python基础11',
+    'pub_date': '2022-06-09',
+    'readcount': 666,
+    'commentcount': 1
+}
+# 创建序列化器
+# instance 用于序列化 对象转字典
+# data 用于反序列化 字典转对象
+serializer = BookInfoSerializer(instance=book, data=data)
+# 验证数据 数据正确返回True，不正确返回False
+serializer.is_valid(raise_exception=True)
+# 保存到数据库
+serializer.save()
+serializer.data
+
+from book.serializers import BoolInfoModelSerializer
+
+# BoolInfoModelSerializer()
+data = {
+    # 'id': 5,
+    'name': 'python进阶',
+    'pub_date': '2022-06-09',
+    'readcount': 666,
+    'commentcount': 1
+}
+serializer = BoolInfoModelSerializer(data=data)
+serializer.is_valid(raise_exception=True)
+serializer.save()
+
+#########################################################################
+# 传入book(外键)
+from book.serializers import BoolInfoModelSerializer, PeopleInfoModelSerializer
+from book.models import BookInfo, PeopleInfo
+
+# 1、模拟字典数据
+data = {
+    'book': 1,
+    'name': 'hzmlfyq',
+    'password': '123456'
+}
+serializer = PeopleInfoModelSerializer(data=data)
+serializer.is_valid(raise_exception=True)
+serializer.save()
+# 传入book_id(外键),需要重写字段book_id
+from book.serializers import BoolInfoModelSerializer, PeopleInfoModelSerializer1
+from book.models import BookInfo, PeopleInfo
+
+# 1、模拟字典数据
+data = [
+    {
+        'book_id': 1,
+        'name': 'hzmlfyq04',
+        'password': '123456',
+        'is_delete': True,  # 传递不需要的数据，需要用read_only过滤掉
+        'description': 'qq'
+    },
+    {
+        'book_id': 2,
+        'name': 'hzmlfyq05',
+        'password': '123456',
+        'is_delete': True,  # 传递不需要的数据，需要用read_only过滤掉
+        'description': 'qq'
+    },
+]
+serializer = PeopleInfoModelSerializer1(data=data, many=True)
+serializer.is_valid(raise_exception=True)
+serializer.save()
+
+# # 这个data 就类似于 我们在讲解 序列化的时候
+# 定义了一个 PeopleInfoSerializer
+# 定义了一个 BookInfoSerialzier
+# 在BookInfoSerialzier 有一个字段是 peopleinfo=PeopleInfoSerializer(many=True)
+"""
+class PeopleInfoSerializer(serializers.Serializer):
+    id = serializers.IntegerField(label='ID')
+
+class BookInfoSerializer(serializers.Serializer):
+    name = serializers.CharField(label='名称')
+
+    #一本书籍关联多个人物
+    people=PeopleInfoSerializer(many=True)
+
+"""
+from book.serializers import BoolInfoModelSerializer1
+
+data = {
+    'name': 'django',
+    'people': [
+        {
+            'name': 'hzmlfyq04',
+            'password': '123456',
+        },
+        {
+            'name': 'hzmlfyq05',
+            'password': '123456',
+        },
+    ]
+}
+serializer = BoolInfoModelSerializer1(data=data)
+serializer.is_valid(raise_exception=True)
+serializer.save()
+
+#################################################################################
+# APIView
+from rest_framework.views import APIView
+
+
+class BookListAPIView(APIView):
+    def get(self, request):
+        books = BookInfo.objects.all()
+        serializer = BoolInfoModelSerializer(instance=books, many=True)
+        return JsonResponse({'code': 0, 'books': serializer.data})
+
+    def post(self, request):
+        pass
