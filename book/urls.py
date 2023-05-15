@@ -6,5 +6,7 @@ urlpatterns = [
     path('books/<int:pk>/', views.BookDetailView.as_view()),
 
     path('apiviewbooks/', views.BookListAPIView.as_view()),
+    path('genericapiviewbooks/', views.BookInfoGenericAPIView.as_view()),
+    path('genericapimixinviewbooks/', views.BookInfoGenericMixinAPIView.as_view()),
 
 ]
