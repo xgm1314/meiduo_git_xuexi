@@ -380,7 +380,7 @@ from book.serializers import BookInfoSerializer
 from book.models import BookInfo
 
 # 模拟对象数据
-book = BookInfo.objects.get(id=18)
+book = BookInfo.objects.get(id=1)
 # 模拟接受字典数据
 data = {
     # 'id': 5,
@@ -488,14 +488,36 @@ serializer.save()
 
 #################################################################################
 # APIView
+
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.request import Request
+from rest_framework import status
 
 
 class BookListAPIView(APIView):
     def get(self, request):
-        books = BookInfo.objects.all()
-        serializer = BoolInfoModelSerializer(instance=books, many=True)
-        return JsonResponse({'code': 0, 'books': serializer.data})
+        # query_params = request.query_params  # request.query_params等同与django的request.GET
+        # print(query_params)
+        books = BookInfo.objects.all()  # 获取对象数据
+        serializer = BoolInfoModelSerializer(instance=books, many=True)  # 将对象数据转化为字典数据
+        # return JsonResponse({'code': 0, 'books': serializer.data})
+        return Response(data=serializer.data, status=status.HTTP_200_OK)  # 返回响应
+        # return JsonResponse({'code':'get'})
 
     def post(self, request):
-        pass
+        """ from表单传数据没问题，json时间传入str类型，无法转换为时间类型数据
+        {
+            "name":"hzhzhz",
+            "pud_date":"2021-6-9",
+            "readcount":66,
+            "commentcount":6
+        }
+        """
+        data = request.data  # 等同于django的request.POST(from表单)或request.body(json数据)
+        # print(type(data['pud_date']))
+        serializer = BoolInfoModelSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+        # return JsonResponse({'code': 'post'})

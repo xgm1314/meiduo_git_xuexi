@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="621f89fc-0a98-4597-a40f-13e20344a574" name="Default Changelist" comment="项目序列化">
+    <list default="true" id="621f89fc-0a98-4597-a40f-13e20344a574" name="Default Changelist" comment="项目反序列化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmanager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanager/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,9 @@
       <workItem from="1683716977391" duration="5921000" />
       <workItem from="1683767634709" duration="15803000" />
       <workItem from="1683804022761" duration="98000" />
-      <workItem from="1683853731908" duration="11574000" />
+      <workItem from="1683853731908" duration="12641000" />
+      <workItem from="1684063139826" duration="10671000" />
+      <workItem from="1684134855596" duration="4657000" />
     </task>
     <task id="LOCAL-00001" summary="定义序列化器">
       <created>1603681379805</created>
@@ -247,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683767235798</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="项目反序列化">
+      <created>1683877720752</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683877720752</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -304,7 +313,24 @@
     <MESSAGE value="总结代码" />
     <MESSAGE value="级联关系的数据转换" />
     <MESSAGE value="项目序列化" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目序列化" />
+    <MESSAGE value="项目反序列化" />
+    <option name="LAST_COMMIT_MESSAGE" value="项目反序列化" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/book/views.py</url>
+          <line>516</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/book/views.py</url>
+          <line>501</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bookmanager_01$views.coverage" NAME="views 覆盖结果" MODIFIED="1683708311620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/book" />
