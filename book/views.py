@@ -487,7 +487,7 @@ serializer.is_valid(raise_exception=True)
 serializer.save()
 
 #################################################################################
-# APIView
+# APIView(一级)
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -497,6 +497,7 @@ from rest_framework import status
 
 class BookListAPIView(APIView):
     def get(self, request):
+        # APIView 查看所有数据
         # query_params = request.query_params  # request.query_params等同与django的request.GET
         # print(query_params)
         books = BookInfo.objects.all()  # 获取对象数据
@@ -506,6 +507,7 @@ class BookListAPIView(APIView):
         # return JsonResponse({'code':'get'})
 
     def post(self, request):
+        # APIView 新增数据
         """ from表单传数据没问题，json时间传入str类型，无法转换为时间类型数据
         {
             "name":"hzhzhz",
@@ -524,16 +526,17 @@ class BookListAPIView(APIView):
 
 
 #################################################################################
-# GenericAPIView
+# GenericAPIView(二级)
 from rest_framework.generics import GenericAPIView
 
 
 class BookInfoGenericAPIView(GenericAPIView):
-    # 设置属性
+    # 设置属性(固定写法)
     queryset = BookInfo.objects.all()  # 设置查询集
     serializer_class = BoolInfoModelSerializer  # 设置序列化器
 
     def get(self, request):
+        # GenericAPIView 查看所有数据
         # 查询数据,三个方法都一样
         # books = BookInfo.objects.all()  # 通用办法
         # books = self.queryset  # 利用属性查询
@@ -545,11 +548,62 @@ class BookInfoGenericAPIView(GenericAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        # GenericAPIView 新增数据
         data = request.data  # 接受数据
         serializer = self.get_serializer(data=data)  # 将字典数据转化为对象数据
         serializer.is_valid(raise_exception=True)  # 验证数据
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+
+
+class BookInfoDetailGenericAPIView(GenericAPIView):
+    # 设置属性(固定写法)
+    queryset = BookInfo.objects.all()  # 设置查询集
+    serializer_class = BoolInfoModelSerializer  # 设置序列化器
+    lookup_field = 'pk'  # 设置关键字参数的名字
+
+    def get(self, request, pk):
+        # GenericAPIView 查询指定数据
+        # book = BookInfo.objects.get(id=pk)  # 通用办法
+        # book = self.queryset.get(id=pk)  # 利用属性查询
+        # book = self.get_queryset().get(id=pk)  # 利用方法进行查询
+        book = self.get_object()  # 利用方法进行查询(更简单)
+        serializer = self.serializer_class(instance=book)
+        return Response(serializer.data)
+
+    def put(self, request, pk):
+        book = self.get_object()  # 查询指定数据
+        data = request.data  # 获取传入的参数
+        serializer = self.serializer_class(instance=book, data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(data=serializer.data, status=status.HTTP_202_ACCEPTED)
+
+    def delete(self, request, pk):
+        book = self.get_object()  # 查询指定数据
+        book.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+from rest_framework.mixins import RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
+
+
+class BookInfoRetrieveModelMixinAPIView(RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin, GenericAPIView):
+    # 设置属性(固定写法)
+    queryset = BookInfo.objects.all()
+    serializer_class = BoolInfoModelSerializer
+
+    def get(self, request, pk):
+        # GenericAPIView 查询指定数据
+        return self.retrieve(request)
+
+    def put(self, request, pk):
+        # GenericAPIView 更新数据
+        return self.update(request)
+
+    def delete(self, request, pk):
+        # GenericAPIView 删除数据
+        return self.destroy(request)
 
 
 #################################################################################
@@ -558,11 +612,34 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 
 
 class BookInfoGenericMixinAPIView(ListModelMixin, CreateModelMixin, GenericAPIView):
+    # 设置属性(固定写法)
     queryset = BookInfo.objects.all()
     serializer_class = BoolInfoModelSerializer
 
     def get(self, request):
+        # GenericAPIView 和 Mixin 配合完成查看所有数据
         return self.list(request)
 
     def post(self, request):
+        # GenericAPIView 和 Mixin 配合完成新增数据
         return self.create(request)
+
+
+#################################################################################
+# 三级视图
+from rest_framework.generics import ListCreateAPIView
+
+
+class BookInfoListCreateAPIView(ListCreateAPIView):
+    # 设置属性(固定写法)
+    queryset = BookInfo.objects.all()
+    serializer_class = BoolInfoModelSerializer
+
+
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
+
+
+class BookInfoRetrieveMixinAPIView(ListCreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView):
+    # 设置属性(固定写法)
+    queryset = BookInfo.objects.all()
+    serializer_class = BoolInfoModelSerializer

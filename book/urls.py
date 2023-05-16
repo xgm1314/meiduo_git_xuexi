@@ -7,6 +7,10 @@ urlpatterns = [
 
     path('apiviewbooks/', views.BookListAPIView.as_view()),
     path('genericapiviewbooks/', views.BookInfoGenericAPIView.as_view()),
+    path('genericapiviewbooks/<pk>/', views.BookInfoDetailGenericAPIView.as_view()),
+    path('retrieveapiviewbooks/<pk>/', views.BookInfoRetrieveModelMixinAPIView.as_view()),
     path('genericapimixinviewbooks/', views.BookInfoGenericMixinAPIView.as_view()),
+    path('listcreatapiviewbooks/', views.BookInfoListCreateAPIView.as_view()),
+    path('retrievesapiviewbooks/<pk>/', views.BookInfoRetrieveMixinAPIView.as_view()),
 
 ]
