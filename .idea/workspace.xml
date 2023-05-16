@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="621f89fc-0a98-4597-a40f-13e20344a574" name="Default Changelist" comment="GenericAPIView 二级视图">
+    <list default="true" id="621f89fc-0a98-4597-a40f-13e20344a574" name="Default Changelist" comment="Mixin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/book/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmanager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmanager/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +178,8 @@
       <workItem from="1683853731908" duration="12641000" />
       <workItem from="1684063139826" duration="10671000" />
       <workItem from="1684134855596" duration="4657000" />
-      <workItem from="1684148827748" duration="12160000" />
+      <workItem from="1684148827748" duration="17543000" />
+      <workItem from="1684235258138" duration="2858000" />
     </task>
     <task id="LOCAL-00001" summary="定义序列化器">
       <created>1603681379805</created>
@@ -270,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684153530544</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Mixin">
+      <created>1684216233496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684216233496</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -330,7 +339,8 @@
     <MESSAGE value="项目反序列化" />
     <MESSAGE value="APIView一级视图" />
     <MESSAGE value="GenericAPIView 二级视图" />
-    <option name="LAST_COMMIT_MESSAGE" value="GenericAPIView 二级视图" />
+    <MESSAGE value="Mixin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mixin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -384,6 +394,16 @@
           <url>file://$PROJECT_DIR$/book/views.py</url>
           <line>605</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/book/views.py</url>
+          <line>660</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/book/views.py</url>
+          <line>666</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

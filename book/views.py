@@ -643,3 +643,38 @@ class BookInfoRetrieveMixinAPIView(ListCreateAPIView, RetrieveAPIView, UpdateAPI
     # 设置属性(固定写法)
     queryset = BookInfo.objects.all()
     serializer_class = BoolInfoModelSerializer
+
+
+#################################################################################
+# ViewSet视图集
+
+from rest_framework.viewsets import ViewSet
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from book.serializers import BoolInfoModelSerializer
+
+
+class BookViewSet(ViewSet):
+
+    def list(self, request):
+        # 获取所有书籍 GET  books/
+        queryset = BookInfo.objects.all()
+        serializer = BoolInfoModelSerializer(instance=queryset, many=True)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+    def retrieve(self, request, pk=None):
+        # 获取指定数据 GET  books/pk/
+        queryset = BookInfo.objects.all()
+        book = get_object_or_404(queryset, pk=pk)
+        serializer = BoolInfoModelSerializer(instance=book)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+#################################################################################
+# ModelViewSet 基本使用
+from rest_framework.viewsets import ModelViewSet
+
+
+class BookModelViewSet(ModelViewSet):
+    queryset = BookInfo.objects.all()
+    serializer_class = BoolInfoModelSerializer
