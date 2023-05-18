@@ -121,4 +121,31 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# drf 的配置 REST_FRAMEWORK
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework.authentication import TokenAuthentication
 
+REST_FRAMEWORK = {  # 在setting中设置的权限不起作用
+
+    'DEFAULT_PERMISSION_CLASSES': [
+
+        # 一、默认用户对所有的业务都有操作权限，即没有权限限制（未指明时默认的权限）
+        # 'rest_framework.permissions.AllowAny',
+
+        # 二、仅通过认证的用户才可以访问项目中的接口
+        'rest_framework.permissions.IsAuthenticated',
+
+        # 三、仅管理员用户（可以通过admin创建一个用户进行测试）
+        # 'rest_framework.permissions.IsAdminUser',
+
+        # 四、未认证的用户只有查权限，经过认证的用户才有增删改的权限
+        # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [  # 认证
+        'rest_framework.authentication.SessionAuthentication',  # session认证
+    ],
+    # 分页
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}

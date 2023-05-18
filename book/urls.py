@@ -25,10 +25,12 @@ DefaultRouter, SimpleRouter：共同点是都可以帮助视图集生成路由
        SimpleRouter  ：http://127.0.0.1:8000/ 跟路由不可以访问
 """
 
-# router = DefaultRouter()  # 创建路由实例对象
-router = SimpleRouter()  # 创建路由实例对象
+router = DefaultRouter()  # 创建路由实例对象
+# router = SimpleRouter()  # 创建路由实例对象
 # prefix：列表视图和详情视图公共部分；
 # viewset：视图集；
 # basename：给列表视图和详情视图的路由设置别名，一般设置为prefix，命名规则：列表视图basename-list；详情视图basename-detail
 router.register(prefix='book', viewset=views.BookModelViewSet, basename='book')
+router.register(prefix='people', viewset=views.PeopleModelViewSet, basename='people')
+
 urlpatterns += router.urls  # 将router生成的路由追加到urlpatterns

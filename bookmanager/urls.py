@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # 只要不是‘admin/’就匹配成功，包含到应用中的urls.py
     path('', include('book.urls')),
 ]

@@ -1,5 +1,5 @@
 ###################序列化###############################
-from django.shortcuts import render
+'''from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import View
@@ -194,7 +194,7 @@ class BookDetailView(View):
             'pub_date': book.pub_date
         })
 
-    """    
+    """
     def get(self, request, pk):
         try:
             book = BookInfo.objects.get(id=pk)
@@ -347,7 +347,7 @@ serializer.data
         IntegerField 满足整形类型
 
 2.  通过字段的选项来验证数据
-    例如: 
+    例如:
         CharField(max_length=10,min_length=5)
         IntegerField(max_value=10,min_value=1)
         required=True 默认是True
@@ -486,9 +486,10 @@ serializer = BoolInfoModelSerializer1(data=data)
 serializer.is_valid(raise_exception=True)
 serializer.save()
 
+'''
 #################################################################################
 # APIView(一级)
-
+from book.models import BookInfo
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.request import Request
@@ -528,6 +529,7 @@ class BookListAPIView(APIView):
 #################################################################################
 # GenericAPIView(二级)
 from rest_framework.generics import GenericAPIView
+from book.serializers import BoolInfoModelSerializer
 
 
 class BookInfoGenericAPIView(GenericAPIView):
@@ -673,8 +675,38 @@ class BookViewSet(ViewSet):
 #################################################################################
 # ModelViewSet 基本使用
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class BookModelViewSet(ModelViewSet):
     queryset = BookInfo.objects.all()
     serializer_class = BoolInfoModelSerializer
+
+
+#################################################################################
+# 高级功能
+from book.models import PeopleInfo
+from book.serializers import PeopleInfoModelSerializer
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser  # 权限
+from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination  # 分页
+
+
+class PageNum(PageNumberPagination):
+    # 继承PageNumberPagination重写page_size
+    page_size = 20  # 开启分页的开关(默认值)
+    page_size_query_param = 'page_size'  # 设置查询字符串的key
+    max_page_size = 50  # 最多每页显示的条数
+
+
+class PeopleModelViewSet(ModelViewSet):
+    permission_classes = [IsAdminUser]  # 给单个视图设置权限
+    # pagination_class = LimitOffsetPagination  # 给单个视图设置分页
+    pagination_class = PageNum  # 给单个视图设置分页，需要在settings.py 设置PAGE_SIZE参数或者继承重写，默认为None不分页
+
+    def get_queryset(self):
+        # 重写 queryset 方法
+        return PeopleInfo.objects.all()
+
+    def get_serializer_class(self):
+        # 重写 serializer_class 方法
+        return PeopleInfoModelSerializer
